@@ -1,0 +1,146 @@
+/* Général */
+p,
+h1 {
+  margin: 0;
+  
+}
+
+ion-toolbar {
+  --background: #ffffff;
+  
+}
+
+ion-content {
+  --background : #f8f8f8;
+}
+
+h4 {
+  margin-left: 12px; 
+}
+
+ion-icon {
+  font-size: 24px;
+}
+
+/* Début Header */
+
+.header-ios ion-toolbar:last-of-type {
+  --border-width: 0 0 0;
+}
+
+.header-icon {
+  font-size: 24px;
+}
+
+[name="chatbox-ellipses"] {
+  font-size: 30px;
+  margin-right: 8px;
+  color: #38a934;
+}
+
+#titre {
+  font-size: 34px;
+  font-family: poppins;
+}
+
+.titre {
+  color: #38a934;
+  font-size: 20px !important;
+}
+/* Fin Header */
+
+#magasiner {
+  --border-radius: 20px;
+}
+
+ion-item {
+  padding-top: 8px;
+  --border-color: #d9d9d9;
+}
+
+ion-item:last-child {
+  padding-top: 0;
+  --background: #ebffea;
+}
+
+.designation {
+  margin-left: 10px;
+}
+
+.designation ion-icon {
+  font-size: 30px;
+}
+
+.nom-produit {
+  font-weight: 500;
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.changer-qte {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin-top: 8px;
+}
+
+.changer {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.changer ion-icon {
+  color: #38a934;
+}
+
+.nombre {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.end {
+  text-align: end;
+  margin-bottom: 5px;
+}
+
+//footer
+
+ion-footer {
+  padding: 16px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: #fff;
+  opacity: 0.97;
+}
+ion-footer h5 {
+  color: #000;
+  margin: 0;
+  margin-left: 15px;
+  font-weight: 300;
+}
+
+ion-footer ion-button {
+  color: #fff;
+}
+
+//si vide
+
+.si-vide {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.si-vide p {
+  margin-bottom: 10px;
+}
+
+.si-vide ion-button {
+  color: white;
+}

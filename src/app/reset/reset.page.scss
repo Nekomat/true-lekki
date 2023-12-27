@@ -1,0 +1,58 @@
+ion-header,
+ion-content {
+  --font-family: poppins;
+}
+ion-title {
+  color: black;
+}
+
+ion-toolbar {
+  --background: #ffffff;
+}
+
+ion-toolbar:last-child {
+}
+
+.titre {
+  margin: 0;
+  margin-left: 20px;
+  color: black;
+}
+
+#marg {
+  margin-left: 12px;
+}
+
+ion-icon {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+ion-item {
+  --border-color: #d9d9d9;
+}
+
+.inscrire {
+  padding-top: 35px;
+  text-align: center;
+}
+
+.inscrire > ion-button {
+  color: #fff;
+}
+
+.inscrire p {
+  padding-top: 30px;
+}
+
+#taille {
+  font-size: 20px;
+}
+
+.change-page {
+  font-weight: 500;
+  color: #38a934;
+}
+ion-icon {
+  font-size: 30px;
+}

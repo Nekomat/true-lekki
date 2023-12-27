@@ -1,0 +1,121 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="">
+    <h4 class="titre-head">Pharmacies</h4>
+
+    <!-- <div slot="end" class="panier">
+      <ion-icon
+        class="header-icon"
+        routerLink="/home/tabs/tab3"
+        name="cart-outline"
+      ></ion-icon>
+      <span> {{service.panier.length}} </span>
+    </div> -->
+    
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment [value]="segmentValue" (ionChange)="segmentValueChange($event)">
+      <ion-segment-button value="Pharmacies">
+        <ion-label>
+          Liste  </ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="Carte">
+        <ion-label> Carte</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  [fullscreen]="true">
+  <div class="ion-padding" *ngIf="allPharmacie[0] && segmentValue=='Pharmacies'">
+    <div
+      class="pharmacie animate__animated animate__slideInUp animate__faster"
+      *ngFor="let data of allPharmacie"
+      (click)="GotoPhar(data)"
+    >
+      <img [src]="data.img" />
+      <div class="pad">
+        <div class="texte">
+          <h5>{{data.name}}</h5>
+          <span class="dot"></span>
+          <p>
+            <span class="ouverte" *ngIf="data.isOpen">Ouverte</span
+            ><span class="fermee" *ngIf="!data.isOpen">Fermée</span>
+          </p>
+        </div>
+
+
+        <div class="distance">
+          <span class="distance-icon">
+            <span class="icon"
+              ><ion-icon class="icon-phar" name="location-outline"></ion-icon>
+            </span>
+            <span id="distance"> {{data.distance}} km</span>
+          </span>
+          <span class="distance-icon">
+            <span class="icon"
+              ><ion-icon class="icon-phar" name="time-outline"></ion-icon>
+            </span>
+            <span id="temps"> {{data.time}} </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div></div>
+
+  <!-- affichage de la carte  -->
+  <div *ngIf="segmentValue=='Carte'">
+    <div id="map" style='width:100%; height: 100%; position: absolute;'>
+    
+    </div>
+  </div>
+ 
+  <div class="ion-padding" *ngIf="!allPharmacie[0] && segmentValue=='Pharmacies'">
+    <div>
+      <div class="pharmacie" *ngFor="let data of [1,2,4,6]">
+        <ion-skeleton-text
+          animated
+          style="width: 100%; height: 150px"
+        ></ion-skeleton-text>
+        <div class="pad">
+          <div class="texte">
+            <h5>
+              <ion-skeleton-text
+                animated
+                style="width: 50%"
+              ></ion-skeleton-text>
+            </h5>
+            <span class="dot"></span>
+            <p>
+              <span class="ouverte">
+                <ion-skeleton-text
+                  animated
+                  style="width: 50%"
+                ></ion-skeleton-text>
+              </span>
+            </p>
+          </div>
+
+          <div class="distance">
+            <span class="distance-icon">
+              <span id="distance">
+                <ion-skeleton-text
+                  animated
+                  style="width: 50%"
+                ></ion-skeleton-text>
+              </span>
+            </span>
+            <span class="distance-icon">
+              <span id="temps">
+                <ion-skeleton-text
+                  animated
+                  style="width: 50%"
+                ></ion-skeleton-text>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

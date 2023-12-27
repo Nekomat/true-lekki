@@ -1,0 +1,134 @@
+ion-header {
+  margin: 4px;
+
+  ion-toolbar {
+    --background: #fff;
+  }
+}
+ion-content {
+
+  --background : #f8f8f8;
+  .entete {
+  
+    .avatar-profil {
+      margin-right: 4px;
+
+      img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+      }
+    }
+
+    h6,
+    p {
+      margin: 2px;
+    }
+    h6 {
+      color: var(--ion-color-dark);
+      font-size: 20px;
+      font-weight: bolder;
+      max-width: 100%;
+      margin: 0px ;
+    }
+    p {
+      font-size: 16px;
+    }
+
+    ion-item {
+      margin-top: 8px;
+      --border-radius: 20px;
+      --padding: 4px 0px;
+  
+    }
+  }
+
+  p {
+    .strong {
+      font-weight: bold;
+    }
+  }
+  .reference {
+    margin-left: 12px;
+    margin-top: 20px;
+    text-align: left;
+    opacity: 0.5;
+    font-size: 14px;
+  }
+}
+
+// envoi ordonnance
+ion-modal#envoi-ordonnance {
+  --height: auto;
+  --background: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+//deuxième partie
+
+ion-modal#envoi-ordonnance .block {
+  color: #000;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+
+
+ion-modal#envoi-ordonnance h1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 35px;
+  line-height: 35px;
+}
+
+ion-modal#envoi-ordonnance p {
+  font-size: 15px;
+  margin: 20px 4px 8px 4px;
+}
+
+ion-modal#envoi-ordonnance ion-button {
+  
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+ion-modal#envoi-ordonnance p {
+  padding-left: 10px;
+}
+.flex {
+text-align: center;
+}
+
+.options {
+  margin: 0px 12px;
+  margin-top: 20px;
+
+  ion-item {
+    margin-top: 8px;
+    --border-radius: 10px;
+    --padding: 16px 0px;
+
+    ion-item-divider {
+      --background: #f8f8f8 !important;
+     
+    }
+
+  ion-label {
+    margin-left: 8px;
+  }
+
+
+  }
+
+
+ 
+  }
+  h4 {
+    margin-left: 12px;
+  }
+  

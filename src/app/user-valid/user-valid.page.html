@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-icon slot="start" name="arrow-back" size="large" (click)="goBack()"></ion-icon>
+    <!-- <ion-icon slot="start" name="arrow-back" size="large"></ion-icon> -->
+    <ion-title>Confirmation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="text-content">
+    <h6>
+      Votre requête a été prise en charge <br />
+      par une pharmacie
+    </h6>
+    <ion-accordion-group *ngIf="service.typeTraiteCommande=='commande'">
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <ion-label style="font-weight: 600;">Vos Produits</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ion-list>
+            <div *ngFor="let data of service.traiteCommande.product">
+              <ion-item>
+                <img
+                  [src]="data.photo"
+                  width="50px"
+                  height="50px"
+                  alt=""
+                />
+
+                <div class="designation">
+                  <p class="nom-produit"> {{data.name}} </p>
+
+                  <div class="changer-qte">
+                    <div class="changer"></div>
+                  </div>
+                </div>
+              </ion-item>
+
+              <ion-item lines="none">
+                <p> qte: {{data.qty}} </p>
+              </ion-item>
+            </div>
+          </ion-list>
+        </div>
+      </ion-accordion> 
+    
+    </ion-accordion-group>
+    <div class="frais">
+      <div class="frais-texte">
+        <p>Sous-total</p>
+        <p>Frais de livraison</p>
+      </div>
+      <div class="frais-prix">
+        <p> {{service.traiteCommande.st.toLocaleString('en-US')}} FG</p>
+        <p> {{service.traiteCommande.fs.toLocaleString('en-US')}} FG</p>
+      </div>
+    </div>
+    <p style="font-weight: 600;" [align]="'center'">Note de la pharmacie</p>
+    <div class="note-commande">
+      <p> {{service.traiteCommande.note}} </p>
+    </div>
+
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="total">
+      <h3>Total:</h3>
+      <h3> {{(service.traiteCommande.st+service.traiteCommande.fs).toLocaleString('en-US')}} FG</h3>
+    </div>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-button expand="block" (click)="Accept()"> Accepter </ion-button>
+    <ion-button color="danger" expand="block" (click)="Annule()"> Refuser</ion-button>
+  </ion-toolbar>
+</ion-footer>

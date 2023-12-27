@@ -1,0 +1,96 @@
+.text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 4px 12px;
+
+  h6 {
+    padding: 8px;
+    text-align: center;
+  }
+}
+
+
+.frais {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 8px;
+  opacity: 70%;
+
+  p {
+    margin: 8px;
+  }
+
+  .frais-texte,
+  .frais-prix {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.total {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0px 8px;
+}
+
+.designation {
+  margin-left: 10px;
+}
+
+.designation ion-icon {
+  font-size: 30px;
+}
+
+.nom-produit {
+  font-weight: 500;
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.changer-qte {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin-top: 8px;
+}
+
+.changer {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.changer ion-icon {
+  color: #38a934;
+}
+
+.nombre {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.end {
+  text-align: end;
+  margin-bottom: 5px;
+}
+
+.note-commande{
+  display: flex;
+  width: 100%;
+  border: 1px solid #38a934;
+  border-radius: 10px;
+  
+  
+  p {
+margin: 8px;
+opacity: 0.8;
+font-style: italic;
+  }
+  
+}

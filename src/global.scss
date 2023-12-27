@@ -1,0 +1,122 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+ion-tabs {
+  ion-tab-bar {
+    --background: #ffffff;
+    --border: none;
+    box-shadow: 10px 10px 12px #000000;
+    ion-tab-button {
+      --padding-top: 4px;
+    }
+  }
+}
+
+// .scroll {
+//   display: flex;
+//   flex-wrap: nowrap;
+//   overflow-x: scroll !important;
+// }
+
+.contenu-pattern {
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/jh\ \(1\).png');
+  background-size: cover;
+  background-position: center;
+  
+
+}
+
+.contenu-pattern-1 {
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/jh\ \(2\)\ \(1\).png');
+  background-size: cover;
+  background-position: center;
+  
+  
+
+}
+
+h1, h2, h3, h4,h5,h6, p {
+  font-family: "Montserrat";
+}
+
+#button-std {
+  --border-radius: 8px ;
+  margin-bottom: 10px;
+  --background: var(--ion-color-dark);
+  color: white;
+  width: 90%;
+
+  h6 {
+    margin: 9px 138px;
+  }
+}
+
+#button-std-2 {
+  border-radius: 8px ;
+  margin-bottom: 10px;
+  --background: #fff;
+  color: var(--ion-color-dark);
+  border: 2px solid var(--ion-color-dark);
+  width: 90%;
+
+  h6 {
+    margin: 9px 138px;
+  }
+}
+
+ion-tabs{
+
+
+  ion-tab-bar{
+
+   
+    
+
+    ion-tab-button.a-badge {
+      --padding-top: 8px;
+      
+      position: relative;
+
+      ion-badge {
+        position: absolute;
+        top: 0%;
+        left: 64%;
+      }
+    }
+  }
+    
+  }
+
+.searchbar-input-container {
+    color: #333;
+    border: 1px solid #39AA35; /* Bordure du champ de recherche */
+    border-radius: 4px; /* Rayon des coins de la bordure du champ de recherche */
+  }

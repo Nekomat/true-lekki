@@ -1,0 +1,91 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="header">
+    <ion-icon
+      name="chevron-back-outline"
+      (click)="service.BackBnt()"
+      slot="start"
+      size="large"
+    ></ion-icon>
+    <ion-title> {{service.pharmacie.name}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <img [src]="service.pharmacie.img" alt="" />
+  <div class="animate__animated animate__slideInUp animate__faster">
+    <div class="details ion-padding">
+      <p id="etat">
+        <span class="dot"></span>
+        <span>Située à {{service.pharmacie.d}} km de vous</span>
+      </p>
+
+      <div class="contact">
+        <ion-icon name="call-outline"></ion-icon>
+        <p>
+          <a href="tel:+224{{service.pharmacie.contact}}">
+            {{service.pharmacie.contact}}
+          </a>
+        </p>
+      </div>
+
+      <div class="contact">
+        <ion-icon name="mail-outline"></ion-icon>
+        <a href="mailto:{{service.pharmacie.contactEmail}}">
+          {{service.pharmacie.contactEmail}}
+        </a>
+      </div>
+    </div>
+    <div class="horaire">
+      <h4 class="titre">Horaire :</h4>
+      <div class="liste">
+        <div class="jour" [ngClass]="{'actif': today==1}">
+          <p>Lundi :</p>
+          <p>
+            {{service.pharmacie.CloseAndOpenHour[0].open}} -
+            {{service.pharmacie.CloseAndOpenHour[0].close}}
+          </p>
+        </div>
+        <div class="jour" [ngClass]="{'actif': today==2}">
+          <p>Mardi :</p>
+          <p>
+            {{service.pharmacie.CloseAndOpenHour[1].open}} -
+            {{service.pharmacie.CloseAndOpenHour[1].close}}
+          </p>
+        </div>
+        <div class="jour" [ngClass]="{'actif': today==3}">
+          <p>Mercredi :</p>
+          {{service.pharmacie.CloseAndOpenHour[2].open}} -
+          {{service.pharmacie.CloseAndOpenHour[2].close}}
+        </div>
+        <div class="jour" [ngClass]="{'actif': today==4}">
+          <p>Jeudi :</p>
+          {{service.pharmacie.CloseAndOpenHour[3].open}} -
+          {{service.pharmacie.CloseAndOpenHour[3].close}}
+        </div>
+        <div class="jour" [ngClass]="{'actif': today==5}">
+          <p>Vendredi :</p>
+          {{service.pharmacie.CloseAndOpenHour[4].open}} -
+          {{service.pharmacie.CloseAndOpenHour[4].close}}
+        </div>
+        <div class="jour" [ngClass]="{'actif': today==6}">
+          <p>Samedi :</p>
+          {{service.pharmacie.CloseAndOpenHour[5].open}} -
+          {{service.pharmacie.CloseAndOpenHour[5].close}}
+        </div>
+        <div class="jour" [ngClass]="{'actif': today==0}">
+          <p>Dimanche :</p>
+          {{service.pharmacie.CloseAndOpenHour[6].open}} -
+          {{service.pharmacie.CloseAndOpenHour[6].close}}
+        </div>
+      </div>
+    </div>
+    <!-- <h4>Catégories des produits :</h4>
+    <div class="categorie">
+      <p>
+        <span *ngFor="let data of service.pharmacie.categories">
+          {{data}} <span class="dot"></span>
+        </span>
+      </p>
+    </div> -->
+  </div>
+</ion-content>

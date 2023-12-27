@@ -1,0 +1,74 @@
+ion-title {
+  //color: var(--ion-color-primary);
+  font-size: 18px;
+  font-family: poppins;
+}
+
+.liste {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.titre {
+  margin-bottom: 5px;
+}
+
+.jour {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+p,
+h4 {
+  margin: 0;
+  font-family: poppins;
+}
+
+h4 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background-color: #eee;
+  padding: 3px;
+  padding-left: 10px;
+}
+
+.actif {
+  font-weight: 600;
+  color: var(--ion-color-primary);
+}
+
+.details {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+#etat {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+#adresse {
+  padding: 5px;
+  padding-left: 10px;
+}
+
+.contact ion-icon {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.categorie {
+  padding: 5px;
+  padding-left: 10px;
+}

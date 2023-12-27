@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="">
+    <h4 class="titre-head">
+      Mon panier <br />
+      <p class="titre" size="large" *ngIf="service.panier.length!=0">
+        {{service.panier[0].pharName}}
+      </p>
+    </h4>
+    <ion-icon
+      class="header-icon"
+      slot="end"
+      name="chatbox-ellipses"
+      routerLink="/list-pharmacie"
+    ></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <div
+    *ngIf="service.panier.length==0"
+    class="si-vide ion-padding animate__animated animate__slideInUp animate__faster"
+  >
+    <img src="/../assets/empty-cart.svg" width="250px" alt="" />
+    <p>Votre panier est vide !</p>
+    <ion-button id="button-std" routerLink="/home"
+      >Acheter un produit</ion-button
+    >
+  </div>
+
+  <ion-list>
+    <div *ngFor="let data of service.panier">
+      <ion-item>
+        <img [src]="data.photo" width="50px" height="50px" alt="" />
+
+        <div class="designation">
+          <p class="nom-produit">{{data.name}}</p>
+
+          <div class="changer-qte">
+            <div class="changer">
+              <ion-icon
+                name="remove-circle-outline"
+                (click)="service.LessQty(data)"
+              ></ion-icon>
+              <span class="nombre"> {{data.qty}} </span>
+              <ion-icon
+                name="add-circle-outline"
+                (click)="service.AddQty(data)"
+              ></ion-icon>
+            </div>
+            <span class="qte">Qté = {{data.qty}} </span>
+          </div>
+        </div>
+
+        <div slot="end" class="end">
+          <ion-icon
+            name="trash-outline"
+            (click)="DeleteInCart(data)"
+          ></ion-icon>
+          <!-- <p>{{data.price.toLocaleString('en-US')}} x {{data.qty}}</p>
+          <span class="strong-6">
+            {{data.price.toLocaleString('en-US')}} GNF</span
+          > -->
+        </div>
+      </ion-item>
+
+      <ion-item lines="none" *ngIf="data.smallDescribe">
+        <p>{{data.smallDescribe}}</p>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>
+
+<ion-footer *ngIf="service.panier.length!=0">
+  <ion-button id="button-std" routerLink="/checkout"
+    > Envoyer </ion-button
+  >
+</ion-footer>

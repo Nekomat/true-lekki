@@ -1,0 +1,39 @@
+ion-toolbar.header {
+  --background: #e9e5e5;
+}
+
+ion-title {
+  font-size: 20px;
+  font-family: Montserrat;
+}
+
+.header-ios ion-toolbar:last-of-type {
+  --border-width: 0 0 0;
+}
+
+[name="arrow-back-outline"] {
+  font-size: 24px;
+  margin-left: 5px;
+}
+
+.commande {
+  border: 2px solid var(--ion-color-dark);;
+  border-radius: 10px;
+  margin: 15px;
+  padding: 8px;
+  margin-bottom: 5px;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+h5 {
+  margin: 0;
+  color: var(--ion-color-primary);
+}
+ion-segment {
+  width: 90%;
+  height: 40px;
+}

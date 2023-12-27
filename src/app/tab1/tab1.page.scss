@@ -1,0 +1,269 @@
+ion-header {
+  ion-toolbar {
+    --background: white;
+    align-items: center;
+   
+   
+    img {
+      width: 30%;
+      height: auto;
+    }
+  }
+  ion-searchbar {
+   
+    --color: #000;
+    --placeholder-color: #000000;
+    --icon-color: #000;
+    --background: transparent;
+   
+    --border-radius: 4px;
+    --opacity: 1!important;
+    
+  }
+
+  .custom {
+    height: 24px;
+
+  }
+  .custom1 {
+    padding: 0px 12px;
+    
+  }
+
+
+  .ion-border {
+    --background : #F8F8F8;
+    
+  }
+
+  .sc-ion-searchbar-ios-h, .sc-ion-searchbar-md-h {
+    opacity: 1!important;
+}
+
+  ion-searchbar.ios {
+    --cancel-button-color: #19422d;
+  }
+
+
+}
+.entete {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4%;
+}
+.entete2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 4%;
+}
+// .list-product-container {
+//   display: flex;
+//   flex-direction: column;
+
+// }
+.liste-produit {
+  
+  display: flex;
+  flex-wrap: wrap;
+  margin: 8px 16px;
+
+  #open-dialog {
+    text-align: center;
+  }
+
+  #open-dialog:active {
+    text-align: center;
+    border: 3px solid #39AA35;
+    border-radius: 10px;
+    
+  }
+
+  ion-card {
+    width: 45%;
+    height: auto;
+    color: #000;
+    position: relative;
+
+    .ajout-panier{
+      display: flex;
+      
+     
+      border-radius: 24px 0px 4px 0px;
+      background: #2ce92526;
+      position: absolute;
+      bottom: 0%;
+      right: 0%;
+      width: 33px;
+      height: 29px;
+      flex-shrink: 0;
+      
+
+      svg {
+        color: #39AA35;
+       margin: auto;
+      }
+    }
+
+    .dans-panier{
+      display: flex;
+      
+     
+      border-radius: 24px 0px 4px 0px;
+      background: #39AA35;
+      position: absolute;
+      bottom: 0%;
+      right: 0%;
+      width: 33px;
+      height: 29px;
+      flex-shrink: 0;
+      
+
+      svg {
+        color: #fff;
+       margin: auto;
+      }
+    }
+    
+
+    ion-card-content {
+      padding: 1%;
+      text-align: left;
+
+      
+    }
+
+    margin: 8px;
+  
+    border-radius: 4px;
+
+    img {
+    width: 80px;
+    
+    }
+
+
+      padding: 6px;
+    }
+
+    p {
+      margin: 1px 24px 1px 8px;
+     
+      font-size: 12px;
+      font-family: Montserrat;
+      font-weight: 600;
+      overflow: hidden;
+      white-space: nowrap;
+  text-overflow: ellipsis;
+    }
+
+    .changer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+
+
+.flex p {
+  font-size: 18px;
+}
+
+ion-content {
+  margin: 12px;
+  --background : #F8F8F8;
+}
+
+
+.icon-ajout1 {
+  font-size: 24px;
+  padding: 0px 4px 0px 0px;
+  
+}
+.icon-ajout2 {
+  font-size: 24px;
+  padding: 0px 0px 0px 4px;
+}
+
+svg {
+  margin-right: 8px;
+  margin-top: 4px;
+}
+// First modal product 
+
+// ion-modal#example-modal {
+//   --width: 80%;
+//   --min-width: 250px;
+//   --height: auto;
+//   --border-radius: 20px;
+//   --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+// }
+
+ion-modal#example-modal h1 {
+  margin: 20px 20px 10px 20px;
+}
+
+ion-modal#example-modal ion-icon {
+  margin-right: 6px;
+
+  width: 48px;
+  height: 48px;
+
+  padding: 0px;
+
+  color: #aaaaaa;
+}
+
+ion-modal#example-modal .wrapper {
+  margin-bottom: 10px;
+}
+
+// Ordonnance modal 
+ion-modal#ordonnance-modal {
+      --height: auto;
+      --background: #fff;
+      font-family: "Poppins", sans-serif;
+    }
+    
+    //deuxième partie
+    
+    ion-modal#ordonnance-modal .block {
+      color: #000;
+      display: flex;
+    
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+    }
+    
+  
+    
+    ion-modal#ordonnance-modal h1 {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      font-size: 35px;
+      line-height: 35px;
+    }
+    
+    ion-modal#ordonnance-modal p {
+      font-size: 15px;
+      margin: 20px 4px 8px 4px;
+    }
+    
+    ion-modal#ordonnance-modal ion-button {
+     
+      margin-top: 10px;
+      margin-bottom: 50px;
+    }
+    
+    ion-modal#ordonnance-modal p {
+      padding-left: 10px;
+    }
+.flex {
+  text-align: center;
+}

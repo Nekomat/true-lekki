@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="head">
+    <ion-searchbar
+showCancelButton="always"  
+cancelButtonText="Retour"    
+placeholder="Rerchercher pharmaice ou produit"
+      [(ngModel)]="word"
+      (ionInput)="Serch($event)"
+      (ionCancel)=" GoBack()"
+    ></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <div class="si-vide" *ngIf="!product">
+    <p>
+      Rerchercher un produit en tapant le nom du produit dans la barre de
+      recherche
+    </p>
+  </div>
+  
+   <div *ngIf="product">
+    <div class="texte">
+      <p> produit(s) trouvé pour "{{word}}" :</p>
+    </div>
+  </div> 
+
+  <div class="liste-produit scroll" *ngIf="product">
+    <ion-card *ngFor="let data of allProduct">
+      <img
+       [src]="data.photo"
+        alt=""
+      />
+
+      <ion-card-content>
+        <div class="produit">
+          <div class="contenu">
+            <p id="nom"> {{data.name}} </p>
+            <p style="font-size: 12px; font-style: italic"> {{data.poids}} </p>
+            
+            <ion-button size="small" [disabled]="data.isPanier" shape="round" expand="block">
+              <span id="ajout"><span> {{data.btn}} </span> </span>
+            </ion-button> 
+            <!-- <ion-chip color="primary" mode="ios" outline="true">
+              <div class="changer">
+                
+                <ion-icon name="remove-circle" class="icon-ajout1"></ion-icon>
+                <span>56</span>
+                <ion-icon name="add-circle" class="icon-ajout2"></ion-icon>
+              </div>
+            </ion-chip> -->
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

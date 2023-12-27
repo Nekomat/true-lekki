@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        mode="md"
+        defaultHref="/home/tabs/tab4"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title> {{ "Profile" }} </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid class="ion-padding">
+    <form [formGroup]="section">
+      <ion-item>
+        <ion-input
+          formControlName="name"
+          label="Nom"
+          labelPlacement="stacked"
+          placeholder="Enter text"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          formControlName="family"
+          labelPlacement="stacked"
+          placeholder="Enter text"
+        ></ion-input>
+      </ion-item>
+      <ion-item [disabled]="true">
+        <ion-input
+          label="numero"
+          formControlName="numero"
+          labelPlacement="stacked"
+          placeholder="Enter text"
+        ></ion-input>
+      </ion-item>
+      <ion-item [disabled]="true">
+        <ion-input
+          label="email"
+          formControlName="email"
+          labelPlacement="stacked"
+          placeholder="Enter text"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-input
+          id="date"
+          label="Date de naissance"
+          value="{{  date | date: 'dd/MM/yyyy' }}"
+        ></ion-input>
+        <ion-popover trigger="date" size="cover" side="top" alignment="center">
+          <ng-template>
+            <ion-datetime
+              lang="fr"
+              presentation="date"
+              (ionChange)="ControleDate($event)"
+            ></ion-datetime>
+          </ng-template>
+        </ion-popover>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-select [value]="genre" label="Genre" placeholder="Choisir">
+          <ion-select-option value="Masculin">Masculin</ion-select-option>
+          <ion-select-option value="Féminin">Féminin</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </form>
+  </ion-grid>
+  <ion-grid style="text-align: center;" fixed>
+    <ion-button id="button-std" (click)="Update()" >
+      Mettre à jour
+    </ion-button>
+    <ion-button id="button-std-2" (click)="Delete()" >
+      Supprimer mon Compte
+    </ion-button>
+  </ion-grid>
+</ion-content>
+

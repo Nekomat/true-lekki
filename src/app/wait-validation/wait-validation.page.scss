@@ -1,0 +1,57 @@
+ion-content {
+  --background: #141414;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.contenu {
+  background-color: white;
+  color: black;
+  height: 45%;
+  width: 80%;
+  padding: 15px;
+  border-radius: 25px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contenu p {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+  //font-family: "poppins" sans-serif !important;
+}
+
+#numero {
+  font-weight: 700;
+}
+
+ion-button {
+  //max-width: 180px;
+}
+
+#accueil {
+  color: white;
+}
+
+img {
+  margin-top: 5px;
+}
+
+small {
+  margin-top: 10px;
+}

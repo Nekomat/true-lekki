@@ -1,0 +1,25 @@
+ion-content {
+  --background: transparent; 
+}
+
+
+#img-spinner {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+ion-spinner {
+  color: var(--ion-color-primary);;
+}
+
+#echec {
+  text-align: center;
+}
+
+.spinner {
+  width: 100%;
+  text-align: center;
+}

@@ -1,0 +1,117 @@
+.header-ios ion-toolbar:last-of-type {
+  --border-width: 0 0 0;
+}
+
+ion-content {
+  --background : #F8F8F8;
+ 
+}
+
+ion-segment {
+  width: 96%;
+  height: 52px;
+}
+
+ion-segment-button {
+  
+ 
+  --color-checked: #fff;
+  
+ 
+  
+  --indicator-color: var(--ion-color-dark, 0.7);
+  
+}
+
+ion-title {
+  font-family: montserrat;
+  margin-top: 5px;
+}
+
+.pharmacie {
+  background: #fff;
+  box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+
+  margin-bottom: 20px;
+ 
+} 
+
+.texte {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pharmacie img {
+  border-radius: 10px;
+  width: 100%;
+  height: 150px;
+  
+}
+
+
+img {
+  object-fit: cover;
+}
+
+.pad {
+  padding: 10px;
+  padding-left: 12px;
+}
+
+h5 {
+  margin: 0;
+  font-weight: 350;
+  text-overflow: ellipsis;
+  max-width: 230px;
+  overflow: hidden;
+  text-wrap: nowrap;
+}
+h4 {
+  margin-left: 12px;
+}
+
+p {
+  margin: 0;
+}
+
+.icon-phar {
+  font-size: 15px;
+  color: #38a934;
+}
+
+.distance-icon {
+  border-radius: 100px;
+  padding: 3px;
+  margin-top: 5px;
+  display: inline-flex;
+
+  color: black;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+#distance {
+  margin-right: 3px;
+}
+h6 {
+  font-size: 20px;
+  margin-left: 8px;
+}
+.ouverte{
+  color: #38a934;
+  margin-left: 8px;
+  font-size: 14px;
+}
+.fermee{
+  color: red;
+  margin-left: 8px;
+  font-size: 14px;
+  margin-right: 4px;
+}

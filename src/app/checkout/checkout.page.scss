@@ -1,0 +1,65 @@
+h4,
+p {
+  margin: 0;
+  font-family: poppins;
+}
+
+ion-title {
+  font-size: 18px;
+  font-family: poppins;
+}
+
+.titre {
+  text-align: center;
+  color: var(--ion-color-primary);
+  font-size: 18px;
+}
+
+.date,
+.paiement {
+  margin-top: 20px;
+}
+
+ion-item {
+  --border-color: #d9d9d9;
+}
+
+.footer {
+  background: white;
+  color: black;
+  border-top: 1px solid #eee;
+  padding-top: 5px;
+}
+
+#total {
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+}
+
+ion-button {
+  color: white;
+}
+
+img {
+  width: 50px;
+}
+
+ion-label {
+  color: black !important;
+}
+
+ion-label p {
+  color: black;
+  margin-left: 18px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left,
+.right {
+  margin-top: 8px;
+}

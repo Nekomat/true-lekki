@@ -1,0 +1,23 @@
+<ion-content [fullscreen]="true" (click)="TryAgain()" class="contenu-pattern" [scrollY]="false">
+  <div id="img-spinner">
+    <img
+      src="../../assets/logo1.png"
+      width="300px"
+      alt=""
+      fetchpriority="high"
+    />
+
+    
+  </div>
+
+  <div id="echec" *ngIf="!loader">
+    
+    <p>
+      Oups ! erreur de connexion <br />Veuillez ressayer en cliquant sur
+      n'importe ou sur la page
+    </p>
+  </div>
+  <div class="spinner">
+    <ion-spinner *ngIf="loader"></ion-spinner>
+  </div>
+</ion-content>

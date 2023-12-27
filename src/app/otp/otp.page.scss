@@ -1,0 +1,92 @@
+ion-header,
+ion-content {
+  --font-family: montserrat;
+}
+
+h2 {
+  margin: 0px;
+  margin-left: 16px;
+  font-size: 24px;
+
+font-weight: 600;
+}
+
+ion-title {
+  color: black;
+  
+}
+
+ion-toolbar {
+  --background: transparent;
+}
+
+ion-toolbar:last-child {
+  margin-bottom: 20px;
+}
+
+p {
+  text-align: center;
+  font-size: 16px;
+}
+
+// ion-button {
+//   color: #fff;
+//   width: 100%;
+// }
+
+#connexion1 {
+  --border-radius: 8px ;
+  margin-bottom: 10px;
+  --background: var(--ion-color-dark);
+  color: white;
+  width: 90%;
+
+  h6 {
+    margin: 9px 138px;
+  }
+ 
+  
+}
+
+.otp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32px;
+  // height: 25vh;
+}
+
+#img-suivant1 {
+  height: 24vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  img {
+    width: 89px;
+  }
+}
+ng-otp-input {
+  margin-bottom: 16px;
+
+  
+}
+
+::ng-deep .input:focus {
+  outline-style: solid;
+  outline-color: #38a934;
+  outline-width: 1px;
+  outline-offset: -1px;
+}
+
+.renvoyer ion-button {
+  color: black;
+  //width: 50%;
+}
+
+#vert {
+  color: #38a934;
+  margin-left: 3px;
+}

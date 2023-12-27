@@ -1,0 +1,117 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="header">
+    <ion-icon 
+    size="large"
+      name="chevron-back-outline"
+      (click)="service.BackBnt()"
+      slot="start"
+    ></ion-icon>
+    <ion-title>Payer ma commande</ion-title>
+    <!-- <ion-icon
+      slot="end"
+      name="chatbox-ellipses"
+      routerLink="/list-pharmacie"
+    ></ion-icon> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [fullscreen]="true">
+  <form [formGroup]="section">
+    <div class="livraison">
+      <h4 class="titre">Adresse de livraison</h4>
+      <ion-item>
+        <ion-input
+          label="Entrer l'adresse ou le quartier"
+          labelPlacement="stacked"
+          placeholder="Exemple : Sonfonia centre"
+          formControlName="adresse"
+        ></ion-input>
+      </ion-item>
+      <!-- <ion-item>
+        <ion-input
+          label="Numéro de téléphone"
+          labelPlacement="stacked"
+          placeholder="Exemple : 623523231"
+          formControlName="numero"
+        ></ion-input>
+      </ion-item> -->
+    </div>
+
+    <!-- <div class="date">
+      <h4 class="titre">Methode de livraison</h4>
+      <ion-item>
+        <ion-select formControlName="Ml" label="Date" placeholder="Choisir">
+          <ion-select-option value="urgence">Urgence</ion-select-option>
+          <ion-select-option value="Aujourd'hui">Aujourd'hui</ion-select-option>
+          <ion-select-option value="demain">Demain</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div> -->
+  </form>
+
+  <div class="paiement">
+    <h4 class="titre">Méthode de paiement</h4>
+    <ion-radio-group value="livraison">
+      <ion-item lines="none">
+        <ion-radio value="livraison" justify="space-between"
+          >Payer à la livraison</ion-radio
+        >
+      </ion-item>
+    </ion-radio-group>
+  </div>
+  <div class="produit-commande">
+    <ion-accordion-group value="first">
+      <ion-accordion value="first">
+        <ion-item slot="header">
+          <h4 class="titre">Produits à commander</h4>
+        </ion-item>
+        <div slot="content">
+          <ion-item *ngFor="let data of service.panier">
+            <img [src]="data.photo" />
+            <ion-label>
+              <p style="font-size: 10px">{{data.name}} {{data.poids}}</p>
+              <p>Qté : {{data.qty}}</p>
+            </ion-label>
+          </ion-item>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </div>
+  <!-- <div class="liste-prix">
+    <div class="flex">
+      <div class="left" style="font-size: 10px"><p>Sous-total :</p></div>
+
+      <div class="right" style="font-size: 10px">
+        {{SousTotal.toLocaleString('en-US')}} GNF
+      </div>
+    </div>
+
+    <div class="flex">
+      <div class="left" style="font-size: 10px">Frais de livraison :</div>
+
+      <div class="right" style="font-size: 10px">
+        {{fraisTranport.toLocaleString('en-US')}} GNF
+      </div>
+    </div>
+
+    <div class="flex">
+      <div class="left" style="font-size: 10px">Frais de services :</div>
+
+      <div class="right" style="font-size: 10px">
+        {{fraisService.toLocaleString('en-US')}} GNF
+      </div>
+    </div>
+  </div> -->
+</ion-content>
+<ion-footer>
+  <div class="footer ion-padding">
+    <!-- <p id="total">Total : {{Total.toLocaleString('en-US')}} GNF</p> -->
+    <ion-button
+      [disabled]="!section.valid"
+      expand="full"
+      (click)="PlaceOrders()"
+      shape="round"
+      >Envoyer pour traitement</ion-button
+    >
+  </div>
+</ion-footer>

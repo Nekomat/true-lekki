@@ -1,0 +1,75 @@
+
+  <ion-header class="ion-no-border ">
+    <ion-toolbar
+      ><ion-icon slot="start" (click)="Back()" name="chevron-back-outline"></ion-icon
+    >
+    <ion-title >
+      <h2>S'inscrire</h2>
+    </ion-title>
+  </ion-toolbar>
+  
+  </ion-header>
+
+
+  <ion-content scrollY="true" [fullscreen]="true" >
+
+<div class="contenu-pattern">
+  <div id="img-suivant1">
+
+    <img src="/../assets/logo.png" alt="" /> 
+
+   
+  </div>
+  
+  <form  [formGroup]="section1">
+    <div class="button-suivant1" *ngIf="regisiterStep.start">
+
+       
+          <div class="entree">
+            <ion-input formControlName="prenom" placeholder="Prénom et nom"></ion-input>
+        </div>
+
+       <div class="entree">
+          <ion-input type="number" formControlName="numero" placeholder="Numéro de téléphone"></ion-input>
+      </div>
+      <ion-button
+      (click)="next()"
+      id="suivant1"
+      size="small"
+        expand="block"
+        [disabled]="!section1.valid"
+        ><h6 >Suivant</h6></ion-button
+      >
+       
+
+    </div>
+  </form>
+  <form [formGroup]="section2">
+    <div class="button-suivant1" *ngIf="regisiterStep.end">
+        <div class="entree">
+          <ion-input formControlName="password" type="password" placeholder="mot de passe "></ion-input>
+      </div>
+    
+
+      <ion-button
+    id="suivant1"
+    size="small"
+    (click)="SendOTP()"
+    expand="block"
+    [disabled]="!section2.valid"
+      ><h6 >Suivant</h6></ion-button
+    >
+    
+
+      
+  </div>
+</form> 
+  <!-- <p>
+        J'ai déjà un compte ?
+        <span class="change-page" routerLink="/login">Me connecter</span>
+      </p> -->
+
+</div>
+   
+  </ion-content>
+

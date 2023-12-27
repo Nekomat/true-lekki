@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon
+      slot="start"
+      routerLink="/login"
+      name="chevron-back-outline"
+    ></ion-icon>
+    <ion-title>Rénitailiser mon mot de passe</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding" [fullscreen]="true">
+  <p id="marg">
+    Entrer votre numéro de téléphone avec lequel vous avez créé votre compte.
+  </p>
+  <ion-list>
+    <form [formGroup]="section">
+      <ion-item>
+        <ion-icon name="call-outline"></ion-icon>
+        <ion-input
+          formControlName="numero"
+          type="number"
+          placeholder="Numéro de téléphone"
+        ></ion-input>
+      </ion-item>
+    </form>
+    <div class="inscrire py-3">
+      <ion-button (click)="SendOtp()" [disabled]="!section.valid" expand="block"
+        ><span id="taille">Envoyer le code</span></ion-button
+      >
+    </div>
+  </ion-list>
+</ion-content>

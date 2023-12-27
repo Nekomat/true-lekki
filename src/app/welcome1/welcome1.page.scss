@@ -1,0 +1,99 @@
+
+
+// #full {
+
+
+//   height: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-around;
+//   align-items: center;
+//   text-align: center !important;
+//   color: white;
+//   font-family: "montserrat";
+//   padding-bottom: 20px;
+// }
+
+
+
+#img-welcome1 {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.text-welcome1 {
+  text-align: center;
+  margin: 50px;
+}
+
+img {
+  width: 89px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 20px;
+  
+  font-family: "montserrat";
+
+  white-space: nowrap;
+  
+}
+
+p {
+  
+  font-family: "montserrat";
+  font-weight: 400;
+  font-size: 16px;
+  margin-top: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+  white-space: nowrap;
+}
+
+.button-welcome1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#connecter {
+  --border-radius: 8px ;
+  margin-bottom: 10px;
+  --background: var(--ion-color-dark);
+  color: white;
+  width: 90%;
+ 
+  
+}
+
+h6 {
+  margin: 9px 138px;
+}
+
+
+
+#inscrire {
+  --border-radius: 8px ;
+  margin: 0px 0px 10px 0px;
+  --border: 0.5px ;
+  --border-style: solid ;
+  --border-color: var(--ion-color-dark);
+  color: rgb(0, 0, 0);
+  --background: #fff;
+  width: 90%;
+
+ 
+}
+
+
+
+
+

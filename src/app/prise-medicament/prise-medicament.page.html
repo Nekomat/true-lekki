@@ -1,0 +1,91 @@
+<ion-header >
+  <ion-toolbar>
+   <ion-icon slot="start" name="arrow-back" size="large" routerLink="/tabs/tab4"></ion-icon>
+   <ion-title>Prise de medicaments</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-list [inset]="true" *ngIf="allRappel[0]">
+  
+    <ion-item [button]="true"  *ngFor="let data of allRappel" (click)="openModal(data.id)" id="open-rappel" >
+      <ion-icon color="warning" slot="start" name="list-circle" size="large"></ion-icon>
+      <ion-label> {{data.name}} </ion-label>
+      <ion-note slot="end"> {{data.at}} </ion-note>
+    </ion-item>
+  </ion-list>
+
+  <div class="text-vide" *ngIf="!allRappel[0]">
+    <p>Vous n'avez pas de rappels <br> pour le moment</p>
+  </div>
+</ion-content>
+
+<ion-footer id="first" *ngIf="true" slot="bottom">
+  <ion-button id="button-std" (click)="OpenCreate()" >
+    Ajouter un rappel
+  </ion-button>
+  
+  <!-- <ion-modal
+   
+  > -->
+ 
+
+   <!-- Modal Nouveau Rappel -->
+   <ion-modal
+   id="nouv-rappel" 
+   [initialBreakpoint]="1"
+    [breakpoints]="[0, 1]"
+    
+   #modalCreate>
+    <ng-template>
+      
+        <ion-toolbar>
+          <ion-title>Nouveau rappel</ion-title>
+          <ion-buttons slot="end">
+            
+          </ion-buttons>
+        </ion-toolbar>
+        <ion-list>
+          <ion-item>
+            <ion-input [(ngModel)]="rapellDetail.name" type="text" placeholder="Titre" ></ion-input>
+          </ion-item>
+          <ion-item>
+          <ion-textarea [(ngModel)]="rapellDetail.body" placeholder="Produits à prendre"></ion-textarea>
+          </ion-item>
+          <ion-item> 
+            <ion-label>Horaire </ion-label>
+        <ion-input [(ngModel)]="rapellDetail.at" type="time" placeholder="l'heure"></ion-input>
+      </ion-item>
+         
+        </ion-list>
+        <ion-button id="button-std-2" class="confirmer" (click)="setRappe()">
+          Confirmer
+         </ion-button>
+      
+    </ng-template>
+  </ion-modal>
+    <!-- Modals -->
+    <ion-modal 
+    id="rappel-mod"
+    trigger="open-rappel"
+    [initialBreakpoint]="1"
+    [breakpoints]="[0, 1]"
+    #deleteModal 
+    >
+
+     <ng-template>
+      <div class="block">
+        <div class="details">
+          <div class="flex">
+            
+
+            
+          </div>
+        </div>
+
+        <ion-button class="supprimer-rappel" color="danger" (click)="delete()" >Supprimer</ion-button>
+      </div>
+    </ng-template>
+  </ion-modal> 
+</ion-footer>

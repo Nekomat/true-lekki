@@ -1,0 +1,61 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar
+    ><ion-icon slot="start" (click)="Back()" name="chevron-back-outline"></ion-icon
+  >
+  <ion-title >
+    <h2>Se connecter</h2>
+  </ion-title>
+</ion-toolbar>
+
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+
+  <div class="contenu-pattern">
+    <div id="img-suivant1">
+
+      <img src="/../assets/logo.png" alt="" />
+  
+     
+    </div>
+    
+    
+      <div class="button-suivant1">
+  
+       
+          <div class="entree1">
+              <ion-input placeholder="Numéro de téléphone"></ion-input>
+            
+          </div>
+  
+          <div class="entree1">
+            <ion-input type="number" placeholder="Mot de passe"></ion-input>
+          
+        </div>
+         
+         
+        <ion-button
+        id="connexion1"
+          expand="block"
+          (click)="Login()"
+          *ngIf="typeOfLogin=='numero'"
+          [disabled]="!section1.valid"
+          >Se connecter</ion-button
+        >
+        <p>
+          Mot de passe oublié ?
+          <span class="change-page" routerLink="/reset">Le renitialiser</span>
+        </p>
+      
+      </div>
+
+  </div>
+
+ 
+ 
+</ion-content>
+     
+     
+    
+

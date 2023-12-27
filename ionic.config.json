@@ -1,0 +1,7 @@
+{
+  "name": "lekki",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

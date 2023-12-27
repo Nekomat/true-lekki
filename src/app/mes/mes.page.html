@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="">
+    <ion-icon
+      name="chevron-back-outline"
+      (click)="service. BackBnt()"
+      slot="start"
+      size="large"
+    ></ion-icon>
+
+    <ion-title>Mes Requêtes</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment [value]="segmentValue" mode="ios" (ionChange)="segmentValueChange($event)">
+      <ion-segment-button value="commande">
+        <ion-label>Commandes</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="ordon">
+        <ion-label> Ordonnances </ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <div *ngIf="CommandeDetail && segmentValue=='commande'">
+      <div class="commande" *ngFor="let data of CommandeDetail">
+        <p style="color: #38a934; font-weight: 600;">Ordonnance <span class="strong">N°{{data.code}} </span></p>
+        <p>Passée le {{data.date}}</p>
+        <p>Payer à la livraison</p> 
+        <p style="font-weight: 600;">Statut : <span style="font-weight: 400;">{{data.statut}} </span></p> 
+        <ion-button  expand="block" fill="clear" (click)="GotoDetail(data)" shape="round" *ngIf="data.statut=='Traite'">
+          Voir les détails
+        </ion-button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="ordonnance && segmentValue=='ordon'">
+    <div class="commande" *ngFor="let data of ordonnance">
+      <p style="color: #38a934; font-weight: 600;">Ordonnance <span class="strong">N°{{data.code}} </span></p>
+        <p>Passée le {{data.date}}</p>
+        <p style="font-weight: 600;">Statut : <span style="font-weight: 400;">{{data.statut}} </span></p> 
+        <ion-button  expand="block" (click)="GotoDetail(data)" fill="clear" shape="round" *ngIf="data.statut=='Traite'">
+          Voir les détails
+        </ion-button> 
+    </div>
+  </div>
+</ion-content>
