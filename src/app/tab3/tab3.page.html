@@ -6,12 +6,7 @@
         {{service.panier[0].pharName}}
       </p>
     </h4>
-    <ion-icon
-      class="header-icon"
-      slot="end"
-      name="chatbox-ellipses"
-      routerLink="/list-pharmacie"
-    ></ion-icon>
+
   </ion-toolbar>
 </ion-header>
 
@@ -72,7 +67,8 @@
 </ion-content>
 
 <ion-footer *ngIf="service.panier.length!=0">
-  <ion-button id="button-std" routerLink="/checkout"
+  <ion-button id="button-std-2" routerLink="/checkout"
     > Envoyer </ion-button
   >
+
 </ion-footer>

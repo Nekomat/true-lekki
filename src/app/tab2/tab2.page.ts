@@ -44,13 +44,13 @@ export class Tab2Page {
         let pharCloseHour = getHour.close as string;
         pharCloseHour = pharCloseHour[0] + pharCloseHour[0];
         pharCloseHour =
-          pharCloseHour[0] == '0' ? pharCloseHour[1] : pharCloseHour;
+          pharCloseHour[0] == '0' ? pharCloseHour[1] : pharCloseHour; 
         let openHour = parseInt(pharOpenHour);
         let closeHour = parseInt(pharCloseHour);
         let nowDate = new Date();
         if (openHour <= nowDate.getHours() && nowDate.getHours() < closeHour) {
           take.isOpen = true;
-        } else {
+        } else { 
           take.isOpen = false;
         }
       } else {
@@ -83,7 +83,7 @@ export class Tab2Page {
         }); 
     
         map.on('load', async function () {
-          map.resize();
+          map.resize(); 
       });
       const refPharmacie = await getDocs(collection(this.fire, 'PHARMACIES')) 
       refPharmacie.forEach((element)=>{

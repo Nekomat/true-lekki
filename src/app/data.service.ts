@@ -21,7 +21,7 @@ export class DataService {
   ) {
     this.GetUserData();
   }
-  userLocation: Position;
+  userLocation: any;
   userData: any;
   userInit: any;
   userNaissance: Date;

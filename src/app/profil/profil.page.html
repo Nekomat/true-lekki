@@ -14,14 +14,6 @@
     <form [formGroup]="section">
       <ion-item>
         <ion-input
-          formControlName="name"
-          label="Nom"
-          labelPlacement="stacked"
-          placeholder="Enter text"
-        ></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input
           formControlName="family"
           labelPlacement="stacked"
           placeholder="Enter text"
@@ -35,14 +27,7 @@
           placeholder="Enter text"
         ></ion-input>
       </ion-item>
-      <ion-item [disabled]="true">
-        <ion-input
-          label="email"
-          formControlName="email"
-          labelPlacement="stacked"
-          placeholder="Enter text"
-        ></ion-input>
-      </ion-item>
+      
 
       <ion-item>
         <ion-icon name="person-outline"></ion-icon>
@@ -72,10 +57,10 @@
     </form>
   </ion-grid>
   <ion-grid style="text-align: center;" fixed>
-    <ion-button id="button-std" (click)="Update()" >
+    <ion-button id="button-std-2" (click)="Update()" >
       Mettre à jour
     </ion-button>
-    <ion-button id="button-std-2" (click)="Delete()" >
+    <ion-button    id="button-std" (click)="Delete()" >
       Supprimer mon Compte
     </ion-button>
   </ion-grid>

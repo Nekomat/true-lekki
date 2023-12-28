@@ -32,8 +32,10 @@
 .total {
   display: flex;
   flex-direction: row;
+  
+  
   justify-content: space-between;
-  margin: 0px 8px;
+  margin: 0px 16px;
 }
 
 .designation {
@@ -93,4 +95,23 @@ opacity: 0.8;
 font-style: italic;
   }
   
+}
+
+.button-accept {
+  border-radius: 8px ;
+  
+  --background: #fff;
+  --color: #000;
+  border: 2px solid var(--ion-color-dark);
+  width: 90%;
+
+  
+}
+
+ion-footer {
+
+  ion-toolbar {
+    text-align: center;
+    margin: 0px;
+  }
 }

@@ -12,7 +12,7 @@ import { DataService } from '../data.service';
 export class Tab1Page implements OnInit {
  @ViewChild('produit') productModal : IonModal
   constructor(
-    private fire : Firestore ,
+    private fire : Firestore , 
     private storage : Storage , 
     private loadCtrl : LoadingController,
     public service : DataService , 
@@ -22,24 +22,11 @@ export class Tab1Page implements OnInit {
   product:Array<any> = []
  async ngOnInit(){ 
   try {
-    const refCate = await getDoc(doc(this.fire,'CATEGORIE','ZZJrAv46HHtHG48X7lVQ')) 
-    if(refCate.exists()){
-     let take :any = refCate.data() 
-     this.cate = take.cate 
-    }
+    
     // prendre les produits 
     const refProduct = await getDocs(collection(this.fire,'PRODUCTS')) 
     refProduct.forEach((element)=>{ 
-      let take :any = element.data() 
-      this.service.AllProduct.push(take)
-      take.btn = 'Ajouter'
-      take.isPanier=false
-      let i = this.product.findIndex(e=>e.cateName == take.cateName ) 
-      if(i!=-1){
-        this.product[i].product.push(take)
-      }else{
-        this.product.push({cateName:take.cateName , product:[take]})
-      }
+      this.product.push(element.data())
     })
     this.allProduct = this.product
   } catch (error) {
@@ -47,22 +34,23 @@ export class Tab1Page implements OnInit {
   }
     
   }
-  // changement de segment 
-  segmentValue='tout'
+  
   allProduct:Array<any>=[]
-  segmentValueChange(event){
-   if(event.detail.value=='tout'){
-    this.product=this.allProduct
-   }else{
-    this.product = this.allProduct.filter(e=>e.cateName == event.detail.value)
-   }
-  } 
+   
 
   // single product 
   singleData :any 
   openSingle(data){
    this.singleData=data 
    this.productModal.present()
+  }
+  word=''
+  search(){
+  if(this.word){
+    this.product = this.allProduct.filter(e=>e.name.toLowerCase().includes(this.word.toLowerCase()))
+  }else{
+    this.product = this.allProduct
+  }
   }
   // send ordonnances 
  async sendPaper(){

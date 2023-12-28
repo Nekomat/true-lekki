@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { doc, Firestore, getDoc } from '@angular/fire/firestore';
+import { collection, doc, Firestore, getDoc, getDocs, query, where } from '@angular/fire/firestore';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
@@ -46,11 +46,24 @@ export class RegisterPage implements OnInit {
     password:['',[Validators.required , Validators.minLength(5)]],
   })
 
-  regisiterStep={start:true , end:false} 
+  regisiterStep={start:true , end:false}  
 
-  next(){
-    this.regisiterStep.start=false
-    this.regisiterStep.end=true
+ async next(){ 
+  const load = await this.loadCtrl.create({message:'Veuillez patienter'}) 
+  load.present()
+  let users=[]
+    const refNumberPhone = await getDocs(query(collection(this.fire,'USERS'), where('numero','==',this.section1.value.numero)))
+      refNumberPhone.forEach(element=>{
+        users.push(element.data())
+      }) 
+      if(users[0]){
+        alert('Ce numéro existe déjà.') 
+        load.dismiss()
+      }else{
+        this.regisiterStep.start=false 
+        this.regisiterStep.end=true 
+      }
+    
   } 
 
   back(){
@@ -108,9 +121,9 @@ export class RegisterPage implements OnInit {
               this.service.userInit ={section1:this.section1,section2:this.section2};
               this.service.otp = code;
               load.dismiss();
-              this.router.navigateByUrl('/otp');
+              this.router.navigateByUrl('/otp'); 
             },
-            async () => {
+            async () => { 
               load.dismiss();
               const alert = await this.alertCtrl.create({
                 header: 'Avertissement',

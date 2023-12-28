@@ -30,12 +30,12 @@
     <span class="strong"> 6755767653457 </span>
   </p> -->
   <div class="otp">
-    <ng-otp-input
+    <ng-otp-input 
       (onInputChange)="otpValue($event)"
       [config]="{length:4, allowNumbersOnly:true, placeholder: '', inputStyles : {'width' : '60px', 'height' : '40px', 'border-radius' : '4px', 'background' : 'white', }, inputClass: 'input', containerClass: 'otpcontainer'}"
     ></ng-otp-input>
     
-    <ion-button id="connexion1" size="small" expand="block"> <h6>Vérifier</h6></ion-button>
+    <ion-button id="connexion1" size="small" expand="block"  > <h6>Vérifier</h6></ion-button>
   </div>
 </div>
 

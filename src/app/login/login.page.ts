@@ -89,13 +89,15 @@ export class LoginPage implements OnInit {
           ).then(() => {
             load.dismiss();
             this.router.navigateByUrl('/', { replaceUrl: true });
-          });
+          }).catch((error)=>{
+           alert(error.message)
+          }); 
         } else {
           // si le numero et le password ne correspond
           load.dismiss();
           const alert = await this.alertCtrl.create({
             header: 'Info',
-            message: 'Vos informations de connexion sont incorrectes'+this.section1.value.numero+this.section1.value.password,
+            message: 'Vos informations de connexion sont incorrectes',
           });
           alert.present();
         }

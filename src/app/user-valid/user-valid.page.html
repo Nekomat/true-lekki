@@ -66,13 +66,16 @@
 
 <ion-footer>
   <ion-toolbar>
-    <div class="total">
-      <h3>Total:</h3>
-      <h3> {{(service.traiteCommande.st+service.traiteCommande.fs).toLocaleString('en-US')}} FG</h3>
-    </div>
+    <!-- <div class="total"> -->
+      <ion-item lines="none">
+        <h3 slot="start">Total:</h3>
+        <h3 slot="end"> {{(service.traiteCommande.st+service.traiteCommande.fs).toLocaleString('en-US')}} FG</h3>
+      </ion-item>
+      
+    <!-- </div> -->
   </ion-toolbar>
   <ion-toolbar>
-    <ion-button expand="block" (click)="Accept()"> Accepter </ion-button>
-    <ion-button color="danger" expand="block" (click)="Annule()"> Refuser</ion-button>
+    <ion-button class="button-accept" (click)="Accept()"> Accepter </ion-button>
+    <ion-button id="button-std" (click)="Annule()"> Refuser</ion-button>
   </ion-toolbar>
 </ion-footer>

@@ -18,7 +18,7 @@
         <ion-label>
           Liste  </ion-label>
       </ion-segment-button>
-      <ion-segment-button value="Carte">
+      <ion-segment-button value="Carte" *ngIf="service.userLocation" >
         <ion-label> Carte</ion-label>
       </ion-segment-button>
     </ion-segment>

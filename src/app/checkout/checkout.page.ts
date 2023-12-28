@@ -77,7 +77,7 @@ export class CheckoutPage implements OnInit {
           outboundSMSMessageRequest: {
             address: `tel:+224${this.service.userData.numero}`,
             senderAddress: 'tel:+2240000',
-            senderName: 'Lekki',
+            senderName: 'Lekki appli',
             outboundSMSTextMessage: {
               message: `Bonjour votre commande N${code} est en cour de traitement par les pharmacies`,
             },

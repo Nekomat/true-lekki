@@ -92,6 +92,19 @@ h1, h2, h3, h4,h5,h6, p {
   }
 }
 
+#button-std-2:active {
+  border-radius: 8px ;
+  margin-bottom: 10px;
+  --background: #000000;
+  color: #fff;
+
+  width: 90%;
+
+  h6 {
+    margin: 9px 138px;
+  }
+}
+
 ion-tabs{
 
 

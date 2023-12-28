@@ -20,17 +20,17 @@
      
     </div>
     
-    
-      <div class="button-suivant1">
+      <form  [formGroup]="section1">
+        <div class="button-suivant1">
   
        
           <div class="entree1">
-              <ion-input placeholder="Numéro de téléphone"></ion-input>
+              <ion-input type="text" formControlName="numero" placeholder="Numéro de téléphone"></ion-input>
             
           </div>
   
           <div class="entree1">
-            <ion-input type="number" placeholder="Mot de passe"></ion-input>
+            <ion-input type="password" formControlName="password" placeholder="Mot de passe"></ion-input>
           
         </div>
          
@@ -49,6 +49,8 @@
         </p>
       
       </div>
+      </form>
+    
 
   </div>
 

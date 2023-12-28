@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1038536809720",
+    "project_id": "lekki-e8ea2",
+    "storage_bucket": "lekki-e8ea2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1038536809720:android:25dd54ee25abe3d1d62f0d",
+        "android_client_info": {
+          "package_name": "com.lekki.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmhJ8e4Q7Oia25SjHXzy5TBsntdIDY3iE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
