@@ -81,9 +81,9 @@ export class Tab2Page {
         zoom: 10, // starting zoom
         accessToken:environment.mapBoxkey,
         }); 
-    
+        
         map.on('load', async function () {
-          map.resize(); 
+          map.resize();  
       });
       const refPharmacie = await getDocs(collection(this.fire, 'PHARMACIES')) 
       refPharmacie.forEach((element)=>{
