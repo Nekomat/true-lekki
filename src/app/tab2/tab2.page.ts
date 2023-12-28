@@ -28,8 +28,8 @@ export class Tab2Page {
         let distance = await this.service.Getdistance(
           take.latitude,
           take.longitude,
-          this.service.userLocation.coords.latitude,
-          this.service.userLocation.coords.longitude
+          this.service.userLocation.latitude,
+          this.service.userLocation.longitude
         );
         take.distance = distance.distance.toFixed();
         take.time = distance.hour;
@@ -57,7 +57,11 @@ export class Tab2Page {
         take.isOpen = false;
       }
       this.allPharmacie.push(take);
-      this.allPharmacie.sort((a, b) => a.distance - b.distance);
+
+      if(this.service.userLocation){
+        this.allPharmacie.sort((a, b) => a.distance - b.distance);
+      }
+      
     });
   }
   // go to phar detail
@@ -77,7 +81,7 @@ export class Tab2Page {
       const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v12', // style URL
-        center: [this.service.userLocation.coords.longitude,this.service.userLocation.coords.latitude], // starting position [lng, lat]
+        center: [this.service.userLocation.longitude,this.service.userLocation.latitude], // starting position [lng, lat]
         zoom: 10, // starting zoom
         accessToken:environment.mapBoxkey,
         }); 

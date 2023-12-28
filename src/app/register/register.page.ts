@@ -74,7 +74,8 @@ export class RegisterPage implements OnInit {
   ngOnInit() {}
   
   // sent OTP
-  async SendOTP() {
+  async SendOTP() { 
+    
     try {
       let code =
         `${Math.floor(Math.random() * 10)}` +

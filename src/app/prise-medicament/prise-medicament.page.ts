@@ -28,6 +28,7 @@ export class PriseMedicamentPage implements OnInit {
   }
   setRappe(){
     if(!this.rapellDetail.name || !this.rapellDetail.body || !this.rapellDetail.at){
+      alert('Veuillez bien remplir le formulaire')
       return
     }
     this.rapellDetail.id = new Date().getTime()
