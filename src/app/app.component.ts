@@ -16,10 +16,10 @@ export class AppComponent  implements OnInit{
  async ngOnInit() { 
   onAuthStateChanged(this.auth,(user)=>{
     if(user){  
-      this.router.navigateByUrl('/')
+      this.router.navigateByUrl('/',{replaceUrl:true})
       SplashScreen.hide(); 
     }else{  
-      this.router.navigateByUrl('/welcome1')
+      this.router.navigateByUrl('/welcome1',{replaceUrl:true})
       SplashScreen.hide();
     }  
    }) 

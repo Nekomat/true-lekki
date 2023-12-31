@@ -29,15 +29,15 @@ export class PriseMedicamentPage implements OnInit {
   setRappe(){
     if(!this.rapellDetail.name || !this.rapellDetail.body || !this.rapellDetail.at){
       alert('Veuillez bien remplir le formulaire')
-      return
+      return 
     }
-    this.rapellDetail.id = new Date().getTime()
-   const now = new Date();
+    this.rapellDetail.id = Math.floor(Math.random() * 11);
+   const now = new Date(); 
     // Définissez l'heure à laquelle vous souhaitez déclencher la notification (par exemple, 14:30) 
    let atTime = this.rapellDetail.at.split(':') 
-   let at1 = parseInt(atTime[0] ) 
-   let at2 = parseInt(atTime[1]) 
-   console.log(at1,at2)
+   let at1 = parseInt(atTime[0] )  
+   let at2 = parseInt(atTime[1])   
+   console.log(at1,at2) 
     const scheduledTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), at1, at2, 0, 0);
     LocalNotifications.schedule({
       notifications:[{
@@ -58,7 +58,9 @@ export class PriseMedicamentPage implements OnInit {
     alert.present() 
     this.allRappel.push(this.rapellDetail)
     localStorage.setItem('rappel',JSON.stringify(this.allRappel)) 
-    this.createModal.dismiss()
+    this.createModal.dismiss() 
+    this.rapellDetail.name=""
+    this.rapellDetail.body=''
     }).catch((e)=>{
       alert("Veuillez choisir une heure supérieure à l'heure actuelle.")
     })
@@ -77,7 +79,8 @@ export class PriseMedicamentPage implements OnInit {
     this.deleteModal.present()
   }
   // open create modal 
-  OpenCreate(){
+  OpenCreate(){ 
+
     this.createModal.present() 
   }
 }

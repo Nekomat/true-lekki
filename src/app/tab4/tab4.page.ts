@@ -32,7 +32,7 @@ export class Tab4Page implements OnInit {
           text: 'Oui',
           handler: () => {
             signOut(this.auth).then(() => {
-              this.router.navigateByUrl('/welcome1');
+              this.router.navigateByUrl('/welcome1',{replaceUrl:true});
             });
           },
         },
