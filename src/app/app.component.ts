@@ -11,26 +11,26 @@ import { DataService } from './data.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent  implements OnInit{
-  constructor(private router: Router , private auth : Auth , private service : DataService) {
-     onAuthStateChanged(auth,(user)=>{ 
-      if(user){ 
-        router.navigateByUrl('/tabs/tab1')
-        SplashScreen.hide(); 
-      }else{  
-        router.navigateByUrl('/welcome1')
-        SplashScreen.hide();
-      }
-     })
-     PushNotifications.requestPermissions().then((value)=>{
+  constructor(private router: Router , private auth : Auth , private service : DataService) { 
+  }
+ async ngOnInit() { 
+  onAuthStateChanged(this.auth,(user)=>{
+    if(user){  
+      this.router.navigateByUrl('/')
+      SplashScreen.hide(); 
+    }else{  
+      this.router.navigateByUrl('/welcome1')
+      SplashScreen.hide();
+    }  
+   }) 
+    Geolocation.getCurrentPosition({enableHighAccuracy:true}).then((value)=>{
+      this.service.userLocation = value.coords
+    })
+    PushNotifications.requestPermissions().then((value)=>{
       if(value.receive=='granted'){
         PushNotifications.register()
       }
      })
-  }
- async ngOnInit()  {
-    Geolocation.getCurrentPosition({enableHighAccuracy:true}).then((value)=>{
-      this.service.userLocation = value.coords
-    })
   }
 
 

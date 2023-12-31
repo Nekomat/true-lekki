@@ -38,7 +38,14 @@ export class MesPage implements OnInit {
       let commande: any = element.data();
       commande.date = new Date(commande.time.seconds * 1000).toLocaleDateString(
         'fr'
-      );
+      ); 
+      if(commande.statut == 'Traite'){
+        commande.statut='Traitée'
+      }else if (commande.statut == 'En cour de traitement'){
+      commande.statut = 'En cours de traitement'
+      }
+
+      
       take.push(commande);
       this.CommandeDetail = take;
     });

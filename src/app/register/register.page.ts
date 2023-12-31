@@ -62,6 +62,7 @@ export class RegisterPage implements OnInit {
       }else{
         this.regisiterStep.start=false 
         this.regisiterStep.end=true 
+        load.dismiss()
       }
     
   } 

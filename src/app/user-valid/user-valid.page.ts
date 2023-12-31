@@ -47,7 +47,7 @@ export class UserValidPage implements OnInit {
       outboundSMSMessageRequest: {
         address: `tel:+224${this.service.traiteCommande.pharContact}`,
         senderAddress: 'tel:+2240000',
-        senderName: 'Lekki',
+        senderName: 'Lekki appli',
         outboundSMSTextMessage: {
           message: `Bonjour l'ordonnance N${this.service.traiteCommande.code} a ete accepter`,
         },
@@ -64,7 +64,7 @@ export class UserValidPage implements OnInit {
         outboundSMSMessageRequest: {
           address: `tel:+224${this.service.traiteCommande.pharContact}`,
           senderAddress: 'tel:+2240000',
-          senderName: 'Lekki',
+          senderName: 'Lekki appli',
           outboundSMSTextMessage: {
             message: `Bonjour la commande N${this.service.traiteCommande.code} a ete accepter`,
           },

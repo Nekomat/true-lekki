@@ -22,7 +22,6 @@ export class Tab1Page implements OnInit {
   product:Array<any> = []
  async ngOnInit(){ 
   try {
-    
     // prendre les produits 
     const refProduct = await getDocs(collection(this.fire,'PRODUCTS')) 
     refProduct.forEach((element)=>{ 
@@ -30,9 +29,8 @@ export class Tab1Page implements OnInit {
     })
     this.allProduct = this.product
   } catch (error) {
-     alert(error.message)
+     alert(error.message) 
   }
-    
   }
   
   allProduct:Array<any>=[]
@@ -106,5 +104,16 @@ export class Tab1Page implements OnInit {
     })
     alert.present()
   })
+  }
+  ionViewDidEnter(){
+    if(this.product[0]){
+      this.product.forEach(element=>{
+        this.service.panier.forEach(elementP=>{
+          if(element.id == elementP.id){
+            element=elementP
+          }
+        })
+      })
+    }
   }
 }

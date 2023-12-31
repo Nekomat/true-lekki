@@ -25,14 +25,14 @@
   <div>
     <div *ngIf="CommandeDetail && segmentValue=='commande'">
       <div class="commande" *ngFor="let data of CommandeDetail">
-        <p style="color: #38a934; font-weight: 600;">Ordonnance <span class="strong">N°{{data.code}} </span></p>
+        <p style="color: #38a934; font-weight: 600;">Commande<span class="strong">N°{{data.code}} </span></p>
         <p>Passée le {{data.date}}</p>
         <p>Payer à la livraison</p> 
         <p style="font-weight: 600;">Statut : <span style="font-weight: 400;">{{data.statut}} </span></p> 
-        <ion-button  expand="block" fill="clear" (click)="GotoDetail(data)" shape="round" *ngIf="data.statut=='Traite'">
+        <ion-button  expand="block" fill="clear" (click)="GotoDetail(data)" shape="round" *ngIf="data.statut=='Traitée'">
           Voir les détails
         </ion-button>
-      </div>
+      </div> 
     </div>
   </div>
 

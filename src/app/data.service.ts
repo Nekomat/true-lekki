@@ -16,7 +16,6 @@ export class DataService {
     private auth: Auth,
     private fire: Firestore,
     private location: Location,
-    private alertCtrl: AlertController,
     private toastCtrl: ToastController
   ) {
     this.GetUserData();
@@ -42,15 +41,19 @@ export class DataService {
         if (refUser.exists()) {
           this.userData = refUser.data();
           console.log(this.userData);
-        }
-      }
+        } 
+      } 
     });
   }
-  BackBnt() {
+  BackBnt() { 
     this.location.back();
-  }
+  } 
   //  start gestion de panier
-  async AddTocart(data) {
+  async AddTocart(data) { 
+    if(data.isPanier){
+      this.ShowMessage('Le produit a déjà été ajouté à votre panier.')
+      return
+    }
     data.qty=1
     data.isPanier=true
     data.btn='Ajouté'

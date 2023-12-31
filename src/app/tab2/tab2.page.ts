@@ -98,7 +98,7 @@ export class Tab2Page {
           })
         marker.setLngLat([take.longitude,take.latitude]).addTo(map)
       }) 
-      load.dismiss() 
+      load.dismiss()  
     }
-  }
+  } 
 }

@@ -13,7 +13,8 @@ ion-segment {
 }
 
 ion-segment-button {
-  --indicator-color: var(--ion-color-dark, 0.7);
+  --indicator-color: var(--ion-color-dark, 0.7); 
+  --color-checked:#F8F8F8 ; 
   
 }
 
