@@ -1,7 +1,7 @@
 
   <ion-header class="ion-no-border ">
     <ion-toolbar
-      ><ion-icon slot="start" (click)="Back()" name="chevron-back-outline"></ion-icon
+      ><ion-icon slot="start" routerLink="/welcome1" name="chevron-back-outline"></ion-icon
     >
     <ion-title >
       <h2>S'inscrire</h2>
@@ -33,15 +33,14 @@
           <ion-input type="text" formControlName="numero" placeholder="Numéro de téléphone"></ion-input>
       </div>
       <ion-button
-      (click)="next()"
-      id="suivant1"
+      (click)="SendOTP()"
+      id="button-std"
       size="small"
         expand="block"
         [disabled]="!section1.valid"
         ><h6 >Suivant</h6></ion-button
       >
        
-
     </div>
   </form>
   <form [formGroup]="section2">
@@ -52,7 +51,7 @@
     
 
       <ion-button
-    id="suivant1"
+    id="button-std"
     size="small"
     (click)="SendOTP()"
     expand="block"

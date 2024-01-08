@@ -34,6 +34,25 @@ h5 {
   color: var(--ion-color-primary);
 }
 ion-segment {
-  width: 90%;
+  width: 96%;
   height: 40px;
+}
+
+ion-segment-button {
+ 
+ 
+  --border-radius: 4px;
+  
+  --color-checked: #fff;
+  
+ 
+  --indicator-color: #000;
+ 
+}
+
+ion-segment h6 {
+  
+
+  font-weight: 550 ;
+  font-size: 16px;
 }

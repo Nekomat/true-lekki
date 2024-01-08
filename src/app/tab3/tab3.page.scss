@@ -38,10 +38,10 @@ ion-icon {
   color: #38a934;
 }
 
-#titre {
-  font-size: 34px;
-  font-family: poppins;
-}
+// #titre {
+//   font-size: 34px;
+//   font-family: poppins;
+// }
 
 .titre {
   // color: #38a934;
@@ -90,7 +90,7 @@ ion-item:last-child {
 .changer {
   display: flex;
   align-items: center;
-  margin-right: 8px;
+  margin: 8px 0px 0px 0px;
 }
 
 .changer ion-icon {
@@ -98,21 +98,21 @@ ion-item:last-child {
 }
 
 .nombre {
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: 'montserrat';
 }
 
 .end {
   text-align: end;
-  margin-bottom: 5px;
+  margin: 12px 0px 4px 0px;
+  
 }
 
 //footer
 
 ion-footer {
-  padding: 16px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+ 
   background: #fff;
   opacity: 0.97;
   text-align: center;
@@ -120,7 +120,7 @@ ion-footer {
 ion-footer h5 {
   color: #000;
   margin: 0;
-  margin-left: 15px;
+
   font-weight: 300;
 }
 
@@ -129,6 +129,11 @@ ion-footer ion-button {
  
 }
 
+.qte {
+  font-size: 11px;
+  font-style: italic;
+  color: #38a934;
+}
 //si vide
 
 .si-vide {
@@ -145,4 +150,14 @@ ion-footer ion-button {
 
 .si-vide ion-button {
   color: white;
+}
+
+
+.changer .icon-panier {
+  font-size: 36px;
+  
+}
+
+.icon-trash {
+  opacity: 0.5;
 }

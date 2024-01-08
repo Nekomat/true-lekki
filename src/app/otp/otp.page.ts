@@ -52,10 +52,11 @@ export class OtpPage implements OnInit {
             message: 'veuillez patieter',
           });
           load.present();
+          let password = this.generatePassword()
           createUserWithEmailAndPassword(
             this.auth,
             `${code}@lekki.com`,
-            this.service.userInit.section2.value.password
+             password
           )
             .then((user) => {
               const refUser = doc(this.fire, 'USERS', user.user.uid);
@@ -64,7 +65,7 @@ export class OtpPage implements OnInit {
                 name: this.service.userInit.section1.value.prenom,
                 numero: this.service.userInit.section1.value.numero,
                 email: `${code}@lekki.com`,
-                password: this.service.userInit.section2.value.password,
+                password: password,
                 time: Timestamp.now(),
                 code: code,
               }).then(() => {
@@ -85,7 +86,7 @@ export class OtpPage implements OnInit {
                     text: 'OK',
                   },
                 ],
-              });
+              }); 
               alert.present();
             });
         } else {
@@ -115,46 +116,23 @@ export class OtpPage implements OnInit {
           this.service.userData.password
         ).then(async() => {
           load.dismiss();
-          this.router.navigateByUrl('/', {
+          this.router.navigateByUrl('/', { 
             replaceUrl: true,
           });
           // on envoi son mot de passe 
-          const refToken = await getDoc(
-            doc(this.fire, 'APPINFO', 'WO3qaXwpoanK4N84qPF7')
-          ); 
-          if(refToken.exists()){
-            const token:any = refToken.data() 
-            //request header
-        const httpOptions = {
-          headers: new HttpHeaders({
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token.tokenSms}`,
-          }),
-        };
-          //les data pour la requete
-        let data = {
-          outboundSMSMessageRequest: {
-            address: `tel:+224${this.service.userData.numero}`,
-            senderAddress: 'tel:+2240000',
-            senderName: 'Lekki appli',
-            outboundSMSTextMessage: {
-              message: `Bonjour votre mot de passe est : ${this.service.userData.password}`,
-            },
-          },
-        };
-        this.http
-        .post(
-          'https://api.orange.com/smsmessaging/v1/outbound/tel%3A%2B2240000/requests',
-          data,
-          httpOptions
-        ).subscribe(()=>{
-          console.log('oui');
           
-        })
-          }
         });
       }
     }
     }
   }
+  generatePassword() {
+    var length = 8,
+        charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+        retVal = "";
+    for (var i = 0, n = charset.length; i < length; ++i) {
+        retVal += charset.charAt(Math.floor(Math.random() * n));
+    }
+    return retVal;
+}
 }

@@ -1,11 +1,8 @@
 <ion-header [translucent]="true">
-  <ion-toolbar class="header">
-    <ion-icon
-      name="chevron-back-outline"
-      (click)="service.BackBnt()"
-      slot="start"
-      size="large"
-    ></ion-icon>
+  <ion-toolbar class="header" mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" defaultHref="/"></ion-back-button>
+    </ion-buttons>
     <ion-title> {{service.pharmacie.name}} </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,9 +11,9 @@
   <img [src]="service.pharmacie.img" alt="" />
   <div class="animate__animated animate__slideInUp animate__faster">
     <div class="details ion-padding">
-      <p id="etat">
+      <p id="etat" *ngIf="service.pharmacie.distance">
         <span class="dot"></span>
-        <span>Située à {{service.pharmacie.d}} km de vous</span>
+        <span>Située à {{service.pharmacie.distance}} km de vous</span>
       </p>
 
       <div class="contact">

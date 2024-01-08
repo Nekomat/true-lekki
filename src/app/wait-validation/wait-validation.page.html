@@ -1,15 +1,17 @@
 <ion-content [fullscreen]="true">
   <div id="content">
     <div class="contenu">
-      <img src="../../assets/grey-9026_128.gif" alt="" />
+      
+      <img src="../../assets/checked.gif" alt="" />
 
       <p>Votre commande numéro {{service.commandeCode}} est en cours de traitement par les pharmacies.</p> 
           
-      <small>Nous vous informerons une fois effectuée.</small>
+      <small>Nous vous informerons une fois traitée.</small>
 
-      <ion-button id="accueil" routerLink="/" shape="round"
+      <ion-button  color="dark" id="btn-success" routerLink="/" 
         >Accueil</ion-button
       >
     </div>
   </div>
 </ion-content>
+

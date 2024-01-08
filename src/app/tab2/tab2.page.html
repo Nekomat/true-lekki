@@ -1,7 +1,10 @@
 <ion-header [translucent]="true">
-  <ion-toolbar class="">
-    <h4 class="titre-head">Pharmacies</h4>
-
+  <ion-toolbar class="" mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <!-- <h4 ></h4> -->
+    <ion-title > Pharmacies </ion-title>
     <!-- <div slot="end" class="panier">
       <ion-icon
         class="header-icon"
@@ -16,10 +19,10 @@
     <ion-segment [value]="segmentValue" (ionChange)="segmentValueChange($event)" mode="ios">
       <ion-segment-button value="Pharmacies">
         <ion-label>
-          Liste  </ion-label>
+          <h6>Liste</h6> </ion-label>
       </ion-segment-button>
       <ion-segment-button value="Carte" *ngIf="service.userLocation" >
-        <ion-label> Carte</ion-label>
+        <ion-label> <h6>Carte</h6></ion-label>
       </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
@@ -55,7 +58,7 @@
             <span class="icon"
               ><ion-icon class="icon-phar" name="time-outline"></ion-icon>
             </span>
-            <span id="temps"> {{data.time}} </span>
+            <span id="temps"> {{data.t}} </span>
           </span>
         </div>
       </div>
@@ -66,7 +69,6 @@
   <!-- affichage de la carte  -->
   <div *ngIf="segmentValue=='Carte'">
     <div id="map" style='width:100%; height: 100%; position: absolute;'>
-    
     </div>
   </div>
  

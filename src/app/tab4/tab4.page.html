@@ -1,14 +1,16 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" *ngIf="service.userData">
   <ion-toolbar class="">
-    <h4 class="titre-head">Mon compte</h4>
+    <!-- <h4 ></h4> --> 
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title> Mon compte </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="animate__animated animate__slideInUp animate__faster">
-    <div class="entete" *ngIf="service.userData">
-      
-      
+  <div class="animate__animated animate__slideInUp animate__faster"  *ngIf="service.userData">
+    <div class="entete">
         <!-- <p>Bienvenue</p> -->
         <ion-item>
           <div slot="start" class="avatar-profil">
@@ -20,7 +22,7 @@
           connecté(e) en tant que
           <span> {{service.userData.email}} </span>
         </p> -->
-        </ion-item>
+        </ion-item> 
        
       
     </div>
@@ -74,7 +76,7 @@
         </ion-item-group>
   
         <ion-item-group>
-         
+      
   
           <ion-item lines="none" (click)=" SignOut()">
             <ion-icon name="log-out-outline" color="danger"></ion-icon>
@@ -87,10 +89,14 @@
           Copyright 2023 - Lekki <br />
           Propulsé par <span class="strong">Nekomat'</span> 
         </p>
-     
-
-
     </div>
+  </div> 
+
+  <div class="ion-padding ouvre-compte" *ngIf="!service.userData">
+    <p>Vous n'avez pas de compte!</p>
+    <ion-button size="small" id="button-std"
+      ><h6>Ouvrir un compte</h6></ion-button
+    >
   </div>
 
   
@@ -113,7 +119,7 @@
           </div>
         </div>
 
-        <ion-button id="button-std" (click)="sendPaper()" >Choisir</ion-button>
+        <ion-button size="small" id="button-std" (click)="sendPaper()" ><h6>Choisir</h6></ion-button>
       </div>
     </ng-template>
   </ion-modal>

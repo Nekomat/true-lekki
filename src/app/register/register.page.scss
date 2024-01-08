@@ -24,17 +24,17 @@ h2 {
 font-weight: 600;
 }
 
-#suivant1 {
-  --border-radius: 8px ;
-  margin-bottom: 10px;
-  --background: var(--ion-color-dark);
-  color: white;
-  width: 90%;
+// #suivant1 {
+//   --border-radius: 8px ;
+//   margin-bottom: 10px;
+//   --background: var(--ion-color-dark);
+//   color: white;
+//   width: 90%;
  
-  h6 {
-    margin: 9px 138px;
-  }
-}
+//   h6 {
+//     margin: 9px 138px;
+//   }
+// }
 
 
 
@@ -48,6 +48,7 @@ font-weight: 600;
   justify-content: space-between;
   align-items: center;
 }
+
 
 #img-suivant1 {
   height: 32vh;
@@ -77,5 +78,19 @@ img {
   margin-bottom: 8px;
   background: #ffffff;
 }
+
+.entree:focus-within {
+  border: 1px solid #38a934;
+  width: 90%;
+  border-radius: 8px;
+  text-align: left;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background: #ffffff;
+}
+
+
 
 

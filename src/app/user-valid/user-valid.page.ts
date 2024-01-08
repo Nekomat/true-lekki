@@ -49,7 +49,7 @@ export class UserValidPage implements OnInit {
         senderAddress: 'tel:+2240000',
         senderName: 'Lekki appli',
         outboundSMSTextMessage: {
-          message: `Bonjour l'ordonnance N${this.service.traiteCommande.code} a ete accepter`,
+          message: `Bonjour l'ordonnance N${this.service.traiteCommande.code} a été acceptée`,
         },
       },
     };
@@ -66,7 +66,7 @@ export class UserValidPage implements OnInit {
           senderAddress: 'tel:+2240000',
           senderName: 'Lekki appli',
           outboundSMSTextMessage: {
-            message: `Bonjour la commande N${this.service.traiteCommande.code} a ete accepter`,
+            message: `Bonjour la commande N${this.service.traiteCommande.code} a été acceptée`,
           },
         },
       };
@@ -77,7 +77,7 @@ export class UserValidPage implements OnInit {
               httpOptions
             ).subscribe(()=>{
               updateDoc(doc(this.fire,'ORDONNANCES',this.service.traiteCommande.id),{
-                statut:'Accepte'
+                statut:'Acceptée'
               })
               load.dismiss() 
              this.router.navigateByUrl('/succes-order')
@@ -97,9 +97,9 @@ export class UserValidPage implements OnInit {
       outboundSMSMessageRequest: {
         address: `tel:+224${this.service.traiteCommande.pharContact}`,
         senderAddress: 'tel:+2240000',
-        senderName: 'Lekki',
+        senderName: 'Lekki appli',
         outboundSMSTextMessage: {
-          message: `Bonjour la commande N${this.service.traiteCommande.code} a ete accepter`,
+          message: `Bonjour la commande N${this.service.traiteCommande.code} a été acceptée`,
         },
       },
     };
@@ -114,9 +114,9 @@ export class UserValidPage implements OnInit {
         outboundSMSMessageRequest: {
           address: `tel:+224${tokenHisData.contact}`,
           senderAddress: 'tel:+2240000',
-          senderName: 'Lekki',
+          senderName: 'Lekki appli',
           outboundSMSTextMessage: {
-            message: `Bonjour la commande N${this.service.traiteCommande.code} a ete accepter`,
+            message: `Bonjour la commande N${this.service.traiteCommande.code} a été acceptée`,
           },
         },
       };
@@ -127,7 +127,7 @@ export class UserValidPage implements OnInit {
         httpOptions
       ).subscribe(()=>{
         updateDoc(doc(this.fire,'COMMANDES',this.service.traiteCommande.id),{
-          statut:'Accepte'
+          statut:'Acceptée'
         })
         load.dismiss() 
        this.router.navigateByUrl('/succes-order')

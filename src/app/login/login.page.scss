@@ -24,15 +24,16 @@ h2 {
 font-weight: 600;
 }
 
-#connexion1 {
-  --border-radius: 8px ;
-  margin-bottom: 10px;
-  --background: var(--ion-color-dark);
-  color: white;
-  width: 90%;
+
+// #connexion1 {
+//   --border-radius: 8px ;
+//   margin-bottom: 10px;
+//   --background: var(--ion-color-dark);
+//   color: white;
+//   width: 90%;
  
   
-}
+// }
 
 h6 {
   margin: 9px 138px;
@@ -68,6 +69,18 @@ img {
 
 .entree1 {
   border: 1px solid #000;
+  width: 90%;
+  border-radius: 8px;
+  text-align: left;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background: #ffffff;
+}
+
+.entree1:focus-within {
+  border: 1px solid #38a934;
   width: 90%;
   border-radius: 8px;
   text-align: left;

@@ -68,41 +68,63 @@ h1, h2, h3, h4,h5,h6, p {
 }
 
 #button-std {
-  --border-radius: 8px ;
+  --border-radius: 4px ;
   margin-bottom: 10px;
   --background: var(--ion-color-dark);
   color: white;
-  width: 90%;
+  width: 348px;
+  height: 40px;
 
   h6 {
     margin: 9px 138px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+
+  h6 {
+    margin: 9px 138px;
+    font-size: 16px;
+    font-weight: 600;
   }
 }
 
+
 #button-std-2 {
-  border-radius: 8px ;
+  border-radius: 4px ;
   margin-bottom: 10px;
   --background: #fff;
   color: var(--ion-color-dark);
-  border: 2px solid var(--ion-color-dark);
-  width: 90%;
+  border: 1px solid var(--ion-color-dark);
+  width: 348px;
+  height: 40px;
 
   h6 {
     margin: 9px 138px;
+    font-size: 16px;
+    font-weight: 600;
   }
 }
 
 #button-std-2:active {
-  border-radius: 8px ;
+  border-radius: 4px ;
   margin-bottom: 10px;
-  --background: #000000;
-  color: #fff;
+  --background: var(--ion-color-light);
+  
 
   width: 90%;
 
   h6 {
     margin: 9px 138px;
   }
+}
+
+ion-button#button-std-2 {
+  --background-activated : var(--ion-color-light);
+}
+
+ion-button#button-std {
+  --background-activated : var(--ion-color-dark);
 }
 
 ion-tabs{
@@ -133,3 +155,20 @@ ion-tabs{
     border: 1px solid #39AA35; /* Bordure du champ de recherche */
     border-radius: 4px; /* Rayon des coins de la bordure du champ de recherche */
   }
+
+  // .titre-head {
+  //   font-weight: 600;
+  // }
+
+  .toastCtrl{
+    --border-radius: 4px;
+    
+  } 
+
+  ion-title {
+    //color: var(--ion-color-primary);
+    font-size: 18px;
+    font-family: Montserrat;
+  }
+
+  

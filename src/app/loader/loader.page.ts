@@ -63,10 +63,4 @@ export class LoaderPage implements OnInit {
         console.log(e);
       });
   }
-  // try again
-  TryAgain() {
-    this.loader = true;
-    this.service.GetUserData();
-    this.ngOnInit();
-  }
 }

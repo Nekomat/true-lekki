@@ -22,8 +22,8 @@
 </ion-content>
 
 <ion-footer id="first" *ngIf="true" slot="bottom">
-  <ion-button id="button-std" (click)="OpenCreate()" >
-    Ajouter un rappel
+  <ion-button size="small" id="button-std" (click)="OpenCreate()" >
+   <h6> Ajouter un rappel</h6>
   </ion-button>
   
   <!-- <ion-modal
@@ -59,8 +59,8 @@
       </ion-item>
          
         </ion-list>
-        <ion-button id="button-std-2" class="confirmer" (click)="setRappe()">
-          Confirmer
+        <ion-button size="small" id="button-std-2" class="confirmer" (click)="setRappe()">
+          <h6>Confirmer</h6>
          </ion-button>
       
     </ng-template>
@@ -84,7 +84,7 @@
           </div>
         </div>
 
-        <ion-button class="supprimer-rappel" color="danger" (click)="delete()" >Supprimer</ion-button>
+        <ion-button size="small" class="button-std-2" (click)="delete()" ><h6>Supprimer</h6></ion-button>
       </div>
     </ng-template>
   </ion-modal> 

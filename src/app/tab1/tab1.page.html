@@ -24,7 +24,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" ion-theme="light">
   <div *ngIf="product">
     <div class="list-product-container">
       <div class="liste-produit scroll">
@@ -32,8 +32,8 @@
          
             <img
             [src]="data1.photo"
-            alt=""
-            (click)="openSingle(data1)"
+            alt="" 
+            
           />
   
          
@@ -41,12 +41,29 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="23" height="23" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M12.5 17h-6.5v-14h-2" /><path d="M6 5l14 1l-.86 6.017m-2.64 .983h-10.5" /><path d="M16 19h6" /><path d="M19 16v6" /></svg> 
           </div> 
 
-          <div class="dans-panier" *ngIf="data1.isPanier">
+          <div class="dans-panier" *ngIf="data1.isPanier" (click)="service.DeleteInPanier(data1)">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-checks" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 12l5 5l10 -10" /><path d="M2 12l5 5m5 -5l5 -5" /></svg>            <!-- <span id="ajout"><span> {{data1.btn}} </span> </span> 
             [disabled]="data1.isPanier" (click)="service.AddTocart(data1)"  -->
           </div>
 
-          <ion-card-content (click)="service.AddTocart(data1)">
+          <ion-card-content *ngIf="!data1.isPanier" (click)="service.AddTocart(data1)">
+            <div class="produit">
+              <div class="contenu">
+                <p id="nom"> {{data1.name}} </p>
+                <p style="font-size: 10px; font-weight: 400;"> {{data1.poids}} </p>
+                <!-- <ion-chip color="primary" mode="ios" outline="true">
+                  <div class="changer">
+                    <ion-icon class="icon-ajout1" name="trash"></ion-icon>
+                    <ion-icon name="remove-circle" class="icon-ajout1"></ion-icon>
+                    <span>56</span>
+                    <ion-icon name="add-circle" class="icon-ajout2"></ion-icon>
+                  </div>
+                </ion-chip> -->
+              </div>
+            </div>
+          </ion-card-content> 
+
+          <ion-card-content *ngIf="data1.isPanier" (click)="service.DeleteInPanier(data1)">
             <div class="produit">
               <div class="contenu">
                 <p id="nom"> {{data1.name}} </p>
@@ -147,7 +164,7 @@
           </div>
         </div>
 
-        <ion-button id="button-std" (click)="sendPaper()" >Choisir</ion-button>
+        <ion-button size="small" id="button-std" (click)="sendPaper()" ><h6>Choisir</h6></ion-button>
       </div>
     </ng-template>
   </ion-modal>

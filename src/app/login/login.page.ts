@@ -3,7 +3,9 @@ import { Location } from '@angular/common';
 import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth';
 import {
   collection,
+  doc,
   Firestore,
+  getDoc,
   getDocs,
   query,
   where,
@@ -11,6 +13,8 @@ import {
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController, LoadingController } from '@ionic/angular';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DataService } from '../data.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -24,7 +28,9 @@ export class LoginPage implements OnInit {
     private alertCtrl: AlertController,
     private router: Router,
     private formCtrl: FormBuilder,
-    public Toback: Location
+    public Toback: Location ,
+    private http:HttpClient ,
+    private service : DataService
   ) {}
   //section control number phone
   section1: FormGroup = this.formCtrl.group({
@@ -37,7 +43,7 @@ export class LoginPage implements OnInit {
         ),
       ],
     ],
-    password: ['', [Validators.required, Validators.minLength(5)]],
+   
   });
   // section control email
   section2: FormGroup = this.formCtrl.group({
@@ -73,7 +79,6 @@ export class LoginPage implements OnInit {
           query(
             collection(this.fire, 'USERS'),
             where('numero', '==', this.section1.value.numero),
-            where('password', '==', this.section1.value.password)
           )
         );
         let takeUserData = [];
@@ -82,16 +87,55 @@ export class LoginPage implements OnInit {
         });
         // si le numero et le password correspnd
         if (takeUserData[0]) {
-          signInWithEmailAndPassword(
-            this.auth,
-            takeUserData[0].email,
-            takeUserData[0].password
-          ).then(() => {
-            load.dismiss();
-            this.router.navigateByUrl('/', { replaceUrl: true });
-          }).catch((error)=>{
-           alert(error.message)
-          }); 
+          const refToken = await getDoc(
+            doc(this.fire, 'APPINFO', 'WO3qaXwpoanK4N84qPF7')
+          );
+          if(refToken.exists()){
+            const hisData: any = refToken.data();
+            let code =
+            `${Math.floor(Math.random() * 10)}` +
+            `${Math.floor(Math.random() * 10)}` +
+            `${Math.floor(Math.random() * 10)}` +
+            `${Math.floor(Math.random() * 10)}` 
+            //request header
+            const httpOptions = {
+              headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${hisData.tokenSms}`,
+              }),
+            }; 
+
+            let data = {
+              outboundSMSMessageRequest: {
+                address: `tel:+224${this.section1.value.numero}`,
+                senderAddress: 'tel:+2240000',
+                senderName: 'Lekki appli',
+                outboundSMSTextMessage: {
+                  message: `Votre code de validation : ${code}`,
+                },
+              },
+            };
+
+            this.http
+          .post(
+            'https://api.orange.com/smsmessaging/v1/outbound/tel%3A%2B2240000/requests',
+            data,
+            httpOptions
+          ).subscribe(()=>{ 
+            load.dismiss()
+            this.service.otp = code;
+            this.service.otpType='login' 
+            this.router.navigateByUrl('/otp') 
+            this.service.userData=takeUserData[0] 
+          },async()=>{ 
+            const alert = await this.alertCtrl.create({
+              header: 'Info',
+              message: 'Erreur reessayer',
+              buttons: [{ text: 'OK' }],
+            });
+            alert.present();
+          })
+          }
         } else {
           // si le numero et le password ne correspond
           load.dismiss();

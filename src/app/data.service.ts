@@ -7,6 +7,7 @@ import { CapacitorHttp } from '@capacitor/core';
 import { Position } from '@capacitor/geolocation';
 import { AlertController, ToastController } from '@ionic/angular';
 import { environment } from 'src/environments/environment.prod';
+import { FirebaseAnalytics } from "@capacitor-community/firebase-analytics";
 
 @Injectable({
   providedIn: 'root',
@@ -19,6 +20,12 @@ export class DataService {
     private toastCtrl: ToastController
   ) {
     this.GetUserData();
+    // initialisation de l'analytique 
+    FirebaseAnalytics.initializeFirebase(environment.firebase); 
+    FirebaseAnalytics.setCollectionEnabled({enabled:true})
+    FirebaseAnalytics.setSessionTimeoutDuration({
+      duration: 10000,
+    });
   }
   userLocation: any;
   userData: any;
@@ -36,11 +43,13 @@ export class DataService {
  typeTraiteCommande='commande'
   GetUserData() {
     onAuthStateChanged(this.auth, async (user) => {
-      if (user) {
+      if (user) { 
+      FirebaseAnalytics.setUserId({
+        userId:user.uid
+      })
         const refUser = await getDoc(doc(this.fire, 'USERS', user.uid));
         if (refUser.exists()) {
-          this.userData = refUser.data();
-          console.log(this.userData);
+          this.userData = refUser.data(); 
         } 
       } 
     });
@@ -59,6 +68,14 @@ export class DataService {
     data.btn='Ajouté'
      this.panier.push(data)
      this.ShowMessage('Produit ajouté dans votre panier.')
+     FirebaseAnalytics.logEvent({
+      name: `les produits ajoute au panier par ${this.userData.name}`,
+      params: {
+        content_type: "produit",
+        content_id: data.name,
+      },
+    });
+    
   }
   //  augmenter la quantité
   AddQty(data) {
@@ -93,6 +110,8 @@ export class DataService {
     const toast = await this.toastCtrl.create({
       message: msg,
       duration: 1000,
+      color:'dark',
+      cssClass:'toastCtrl'
     });
     toast.present();
   }

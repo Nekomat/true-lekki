@@ -1,4 +1,5 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
+import { FirebaseAnalytics } from '@capacitor-community/firebase-analytics';
 import {LocalNotifications}  from '@capacitor/local-notifications'
 import { AlertController } from '@ionic/angular';
 import { IonModal } from '@ionic/angular/common';
@@ -15,6 +16,10 @@ export class PriseMedicamentPage implements OnInit {
   ) { }
   allRappel=[]
   ngOnInit() { 
+    FirebaseAnalytics.setScreenName({
+      screenName: "Rappel",
+      nameOverride: "Page rappel",
+    });
     let take = JSON.parse(localStorage.getItem('rappel')) 
     if(take){
       this.allRappel = take

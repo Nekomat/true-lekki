@@ -58,7 +58,7 @@
     </div>
     <p style="font-weight: 600;" [align]="'center'">Note de la pharmacie</p>
     <div class="note-commande">
-      <p> {{service.traiteCommande.note}} </p>
+      <p> {{service.traiteCommande.note}} </p> 
     </div>
 
   </div>
@@ -75,7 +75,7 @@
     <!-- </div> -->
   </ion-toolbar>
   <ion-toolbar>
-    <ion-button class="button-accept" (click)="Accept()"> Accepter </ion-button>
-    <ion-button id="button-std" (click)="Annule()"> Refuser</ion-button>
+    <ion-button size="small" id="button-std-2" (click)="Accept()"> <h6 style="color: #000;">Accepter</h6> </ion-button>
+    <ion-button size="small" id="button-std" (click)="Annule()"> <h6>Refuser</h6></ion-button>
   </ion-toolbar>
 </ion-footer>

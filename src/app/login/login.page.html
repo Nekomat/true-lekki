@@ -29,24 +29,14 @@
             
           </div>
   
-          <div class="entree1">
-            <ion-input type="password" formControlName="password" placeholder="Mot de passe"></ion-input>
-          
-        </div>
-         
-         
         <ion-button
-        id="connexion1"
-          expand="block"
+        id="button-std"
+         size="small"
           (click)="Login()"
           *ngIf="typeOfLogin=='numero'"
           [disabled]="!section1.valid"
-          >Se connecter</ion-button
+          ><h6>Se connecter</h6></ion-button
         >
-        <p>
-          Mot de passe oublié ?
-          <span class="change-page" routerLink="/reset">Le renitialiser</span>
-        </p>
       
       </div>
       </form>

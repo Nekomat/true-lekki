@@ -16,7 +16,7 @@
         <ion-input
           formControlName="family"
           labelPlacement="stacked"
-          placeholder="Enter text"
+          placeholder="Entrer un nom"
         ></ion-input>
       </ion-item>
       <ion-item [disabled]="true">
@@ -36,7 +36,7 @@
           label="Date de naissance"
           value="{{  date | date: 'dd/MM/yyyy' }}"
         ></ion-input>
-        <ion-popover trigger="date" size="cover" side="top" alignment="center">
+        <ion-popover trigger="date" size="cover" side="bottom" alignment="center" >
           <ng-template>
             <ion-datetime
               lang="fr"
@@ -57,11 +57,11 @@
     </form>
   </ion-grid>
   <ion-grid style="text-align: center;" fixed>
-    <ion-button id="button-std-2" (click)="Update()" >
-      Mettre à jour
+    <ion-button size="small" id="button-std-2" (click)="Update()" >
+     <h6> Mettre à jour</h6>
     </ion-button>
-    <ion-button    id="button-std" (click)="Delete()" >
-      Supprimer mon Compte
+    <ion-button  size="small"  id="button-std" (click)="Delete()" >
+      <h6>Supprimer mon Compte</h6>
     </ion-button>
   </ion-grid>
 </ion-content>

@@ -4,6 +4,7 @@ import { Storage, getDownloadURL, ref, uploadString } from '@angular/fire/storag
 import { AlertController, IonModal, LoadingController } from '@ionic/angular';
 import { Camera, CameraResultType } from '@capacitor/camera';
 import { DataService } from '../data.service';
+import { FirebaseAnalytics } from '@capacitor-community/firebase-analytics';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -21,10 +22,15 @@ export class Tab1Page implements OnInit {
   cate:Array<any>=[]
   product:Array<any> = []
  async ngOnInit(){ 
-  try {
+  try { 
+    FirebaseAnalytics.setScreenName({
+      screenName: "Acceuil",
+      nameOverride: "Page Acceuil",
+    });
     // prendre les produits 
     const refProduct = await getDocs(collection(this.fire,'PRODUCTS')) 
     refProduct.forEach((element)=>{ 
+      let take :any = element.data()
       this.product.push(element.data())
     })
     this.allProduct = this.product
@@ -55,7 +61,7 @@ export class Tab1Page implements OnInit {
   Camera.getPhoto({
     quality: 90,
     resultType: CameraResultType.DataUrl,
-    promptLabelCancel: 'Annulé',
+    promptLabelCancel: 'Annuler',
     promptLabelHeader: 'Prendre ou selectionner une photo',
     promptLabelPhoto: 'Choisir une photo',
     promptLabelPicture: 'Prendre une photo',
@@ -111,6 +117,8 @@ export class Tab1Page implements OnInit {
         this.service.panier.forEach(elementP=>{
           if(element.id == elementP.id){
             element=elementP
+          }else{
+            element.isPanier=false
           }
         })
       })

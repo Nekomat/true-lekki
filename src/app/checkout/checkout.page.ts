@@ -79,7 +79,7 @@ export class CheckoutPage implements OnInit {
             senderAddress: 'tel:+2240000',
             senderName: 'Lekki appli',
             outboundSMSTextMessage: {
-              message: `Bonjour votre commande N${code} est en cour de traitement par les pharmacies`,
+              message: `Bonjour votre commande N${code} est en cours de traitement par les pharmacies`,
             },
           },
         };
@@ -98,7 +98,7 @@ export class CheckoutPage implements OnInit {
                 product:this.service.panier,
                 lieux:this.section.value.adresse,
                 numero:this.service.userData.numero,
-                statut:'En cour de traitement',
+                statut:'En cour de traitement', 
                 userCode:this.service.userData.code,
                 time:Timestamp.now(),
                 userId:this.service.userData.id,

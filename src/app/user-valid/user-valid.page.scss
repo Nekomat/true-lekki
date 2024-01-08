@@ -85,6 +85,8 @@
 .note-commande{
   display: flex;
   width: 100%;
+  text-wrap: wrap;
+  padding: 8px;
   border: 1px solid #38a934;
   border-radius: 10px;
   
@@ -97,16 +99,16 @@ font-style: italic;
   
 }
 
-.button-accept {
-  border-radius: 8px ;
+// .button-accept {
+//   border-radius: 8px ;
   
-  --background: #fff;
-  --color: #000;
-  border: 2px solid var(--ion-color-dark);
-  width: 90%;
+//   --background: #fff;
+//   --color: #000;
+//   border: 2px solid var(--ion-color-dark);
+//   width: 90%;
 
   
-}
+// }
 
 ion-footer {
 

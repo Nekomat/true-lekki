@@ -5,6 +5,7 @@ import { LoadingController } from '@ionic/angular';
 import { DataService } from '../data.service';
 import * as mapboxgl from 'mapbox-gl';
 import { environment } from 'src/environments/environment.prod';
+import { FirebaseAnalytics } from '@capacitor-community/firebase-analytics';
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -24,7 +25,7 @@ export class Tab2Page {
     refPharmacie.forEach(async (element) => {
       let take: any = element.data();
       // calcul de distance entre l'utilisateur
-      if (this.service.userLocation) {
+      if (this.service.userLocation) { 
         let distance = await this.service.Getdistance(
           take.latitude,
           take.longitude,
@@ -32,10 +33,10 @@ export class Tab2Page {
           this.service.userLocation.longitude
         );
         take.distance = distance.distance.toFixed();
-        take.time = distance.hour;
+        take.t = distance.hour;
       }
       // verifier si ouvert ou ferme
-      if (take.CloseAndOpenHour) {
+      if (take.CloseAndOpenHour) { 
         let today = new Date().getDay();
         let getHour = take.CloseAndOpenHour.find((e) => e.index == today);
         let pharOpenHour = getHour.open as string;
@@ -63,6 +64,11 @@ export class Tab2Page {
       }
       
     });
+    FirebaseAnalytics.setScreenName({
+      screenName: "Pharmacie",
+      nameOverride: "Page des Pharmacies",
+    });
+    
   }
   // go to phar detail
   GotoPhar(data) {

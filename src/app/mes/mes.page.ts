@@ -43,6 +43,8 @@ export class MesPage implements OnInit {
         commande.statut='Traitée'
       }else if (commande.statut == 'En cour de traitement'){
       commande.statut = 'En cours de traitement'
+      }else if (commande.statut=='Accepte'){
+        commande.statut='Acceptée'
       }
 
       
@@ -60,6 +62,13 @@ export class MesPage implements OnInit {
   refOrdon.forEach((element)=>{
    let o:any = element.data() 
    o.date = new Date(o.time.seconds*1000).toLocaleDateString('fr') 
+   if(o.statut == 'Traite'){
+    o.statut='Traitée'
+  }else if (o.statut == 'En cour de traitement'){
+  o.statut = 'En cours de traitement'
+  }else if (o.statut=='Accepte'){
+    o.statut='Acceptée' 
+  }
    Ordon.push(o) 
    this.ordonnance = Ordon
   })

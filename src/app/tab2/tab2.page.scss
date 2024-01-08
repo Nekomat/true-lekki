@@ -9,19 +9,17 @@ ion-content {
 
 ion-segment {
   width: 96%;
-  height: 52px;
+  height: 40px;
+  
 }
 
 ion-segment-button {
   --indicator-color: var(--ion-color-dark, 0.7); 
   --color-checked:#F8F8F8 ; 
+  --border-radius: 4px;
   
 }
 
-ion-title {
-  font-family: montserrat;
-  margin-top: 5px;
-}
 
 .pharmacie {
   background: #fff;
@@ -65,7 +63,16 @@ h5 {
 }
 h4 {
   margin-left: 12px;
+  font-size: 20px;
 }
+
+ion-segment h6 {
+  
+
+  font-weight: 550 ;
+  font-size: 16px;
+}
+
 
 p {
   margin: 0;

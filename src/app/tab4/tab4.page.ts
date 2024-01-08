@@ -32,6 +32,7 @@ export class Tab4Page implements OnInit {
           text: 'Oui',
           handler: () => {
             signOut(this.auth).then(() => {
+              this.service.userData=undefined
               this.router.navigateByUrl('/welcome1',{replaceUrl:true});
             });
           },
@@ -48,8 +49,8 @@ export class Tab4Page implements OnInit {
     Camera.getPhoto({
       quality: 90,
       resultType: CameraResultType.DataUrl,
-      promptLabelCancel: 'Annulé',
-      promptLabelHeader: 'Prendre ou selectionner une photo',
+      promptLabelCancel: 'Annuler',
+      promptLabelHeader: 'Prendre ou choisir une photo',
       promptLabelPhoto: 'Choisir une photo',
       promptLabelPicture: 'Prendre une photo',
     }).then(async(photo)=>{
